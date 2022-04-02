@@ -7,7 +7,7 @@ import delivery from '../../Asset/delivry-jumia.png'
 import global from '../../Asset/global-jumia.png'
 import prime from '../../Asset/prime-jumia.png'
 import supers from '../../Asset/super-jumia.png'
-
+import jumiabag from '../../Asset/jumia-bag.jpg'
 
 
 
@@ -15,6 +15,18 @@ import supers from '../../Asset/super-jumia.png'
 import "../Home/Home.css"
 
 function Home(){
+    let items=[
+        {image:jumiabag,
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:jumiabag,
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"}
+    ]
     return(
         <div className='main-home'>
            
@@ -111,11 +123,29 @@ function Home(){
                           <p>SEE ALL</p>
                       </div>
                   </div>
-                  <div >
+                  <div className='items-home'>
+            {   items.filter((val,indx)=>{
+                return(indx<5)
+            })
+                .map((val,ind)=>{
+                    // ind<2
+                    return(
+                        <ul className='list-container'  key={ind}>
+                            <li><img src={val.image} alt=""/></li>
+                            <li>{val.amount}</li>
+                            <li>{val.previous}</li>
+                            <li>{val.amtleft}</li>
+                        </ul>
+                    )
+
+
+                })
+            }
 
                   </div>
 
               </div>
+              {/* <DemoCarousel/> */}
 
             
 
