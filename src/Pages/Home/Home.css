@@ -66,14 +66,16 @@ body{
    width: 55%;
   
     height: 380px;
-  
+   
     cursor: pointer;
 }
 .home-central-image img{
     width: 100%;
     height: 100%;
     border-radius: 6px;
+   
 }
+
 .home-top-right-area{
     display: flex;
     flex-direction: column;
@@ -96,6 +98,7 @@ body{
     margin-bottom: 20px;
     background-color: white;
     display: flex;
+  
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
@@ -110,7 +113,7 @@ body{
 .head-and-parag-home-right{
     display: flex;
     text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 .head-and-parag-home-right p{
     font-size: 12px;
@@ -121,10 +124,11 @@ body{
     font-size: 13px;
     color: rgb(163, 156, 156);
     font-weight: 100px;
+    margin-bottom: 5px;
 }
 .home-top-img{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 .first-body-div-down{
     display: flex;

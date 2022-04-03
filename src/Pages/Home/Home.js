@@ -8,11 +8,13 @@ import global from '../../Asset/global-jumia.png'
 import prime from '../../Asset/prime-jumia.png'
 import supers from '../../Asset/super-jumia.png'
 import jumiabag from '../../Asset/jumia-bag.jpg'
-
-
+import Carousell from '../../Components/Carousel/Carousel'
+import Zoom from 'react-reveal/Zoom';
+import Reveal from 'react-reveal/Reveal';
 
 
 import "../Home/Home.css"
+
 
 function Home(){
     let items=[
@@ -55,7 +57,7 @@ function Home(){
 
                       </div>
                       <div className='home-central-image'>
-                          <img src={jumiacenter} alt=""/>
+                          <Carousell className="carous"/>
                       </div>
                       <div className='home-top-right-area'>
                           <div className=' major-blocks-right-top home-top-right-area-first'>
@@ -84,7 +86,15 @@ function Home(){
                              
                           </div>
                           <div className='major-blocks-right-top home-top-right-area-second'>
-
+                            <Zoom forever duration={2000} delay={2000} >
+                                <h1>hi</h1>
+                               
+                            </Zoom>
+                            {/* <Zoom forever duration={2000} delay={6000} >
+                                <h1>me</h1>
+                               
+                            </Zoom> */}
+                            
                           </div>
                       </div>
 

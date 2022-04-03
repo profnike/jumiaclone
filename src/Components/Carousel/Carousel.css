@@ -1,0 +1,11 @@
+.carousel-div img  {
+    height: 380px !important;
+    z-index: 1 !important;
+  
+}
+.carousel-div{
+   z-index:1;
+}
+.carousel-items ol li{
+    border-radius: 100% !important;
+}

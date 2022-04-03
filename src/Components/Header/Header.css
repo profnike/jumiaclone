@@ -16,6 +16,7 @@ body{
     
 }
 
+
 .upper-first{
     background-color: orange;
     height: 10vh;
@@ -73,7 +74,7 @@ body{
     box-shadow:  1px 3px 8px  rgb(0 0 0/ 10%);
     align-self: flex-start;
     top: 0px;
-
+    z-index: 1000;
   
 }
 .search-input-div-home{
