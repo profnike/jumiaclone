@@ -54,7 +54,7 @@ function Header({children}){
                    <div className="star-div">
                <AiOutlineStar/>
                </div>
-                   <p>Sell on Jumia</p>
+                   <span>Sell on Jumia</span>
                   
                </div>
                </Link>
@@ -75,9 +75,9 @@ function Header({children}){
                 <input  placeholder="Search products,brand and categories" type="search"/>
                 </div>
                 <button>SEARCH</button>
-               <div className="options-and-icons"> <FaRegUser/><p>Account</p><FaChevronDown/></div>
-               <div className="options-and-icons"><FiHelpCircle/><p>Help</p><FaChevronDown/></div>
-               <div className="options-and-icons"><AiOutlineShoppingCart/><p>Cart</p></div>
+               <div className="options-and-icons"> <FaRegUser/><span>Account</span><FaChevronDown/></div>
+               <div className="options-and-icons"><FiHelpCircle/><span>Help</span><FaChevronDown/></div>
+               <div className="options-and-icons"><AiOutlineShoppingCart/><span>Cart</span></div>
                </div>
                </div>
                {children}

@@ -9,14 +9,21 @@ import prime from '../../Asset/prime-jumia.png'
 import supers from '../../Asset/super-jumia.png'
 import jumiabag from '../../Asset/jumia-bag.jpg'
 import Carousell from '../../Components/Carousel/Carousel'
+import Toggle from '../../Components/Toggleanim/Toggleanim'
 import Zoom from 'react-reveal/Zoom';
 import Reveal from 'react-reveal/Reveal';
+import { useState } from 'react'
+import { useRef } from 'react'
 
 
 import "../Home/Home.css"
+import { useNavigate } from 'react-router-dom'
 
 
 function Home(){
+    let myRef=useRef()
+    let navigate=useNavigate()
+    const [containerstyle, setContainerstyle]=useState({})
     let items=[
         {image:jumiabag,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
@@ -27,8 +34,12 @@ function Home(){
             {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
             {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"}
     ]
+    
+  
     return(
         <div className='main-home'>
            
@@ -86,19 +97,29 @@ function Home(){
                              
                           </div>
                           <div className='major-blocks-right-top home-top-right-area-second'>
-                            <Zoom forever duration={2000} delay={2000} >
-                                <h1>hi</h1>
-                               
-                            </Zoom>
-                            {/* <Zoom forever duration={2000} delay={6000} >
-                                <h1>me</h1>
-                               
-                            </Zoom> */}
+                              
+                         
+                         
+                          <h3 className='top-right-anim'>
+                          EVERYTHING MUST GO!
+                         
+                                  </h3>
+                                 
+                                  
+                              <div className='top-right-sec-anim'>
+                              <h3>Upto 80% off</h3>
+                                <h4>1st to 3rd April</h4>
+                            
+                                  </div>
+                             
+                             
+                           
                             
                           </div>
                       </div>
 
                   </div>
+                 
                   <div className='first-body-div-down'>
                       <div className='first-body-div-down-div'>
                       <img src={delivery} alt=""/>
@@ -130,28 +151,50 @@ function Home(){
                       </div>
                       <p>Time left: 14h :42m :55s</p>
                       <div>
-                          <p>SEE ALL</p>
+                          <p onClick={(()=>{navigate("/All/Flashsales")})} className="home-sellname">SEE ALL</p>
                       </div>
                   </div>
+                  
                   <div className='items-home'>
+                 
+                 
+            {/* <div style={containerstyle} className='arr'>
+                      arrow-left
+                    
+                      </div> */}
+                     
+            
+           
+                     
+                      
+                     
+                
             {   items.filter((val,indx)=>{
-                return(indx<5)
+                return(indx<6)
             })
                 .map((val,ind)=>{
                     // ind<2
                     return(
-                        <ul className='list-container'  key={ind}>
+                        
+                        <ul ref={myRef} className='list-container'  key={ind}>
                             <li><img src={val.image} alt=""/></li>
                             <li>{val.amount}</li>
-                            <li>{val.previous}</li>
+                            <li className='previous-cancel-home'>{val.previous}</li>
                             <li>{val.amtleft}</li>
                         </ul>
+                        
                     )
 
 
                 })
             }
-
+             {/* <div onClick={(()=>{console.log(myRef.width)})}  className='arr'>
+                      arrow-right
+                    
+                      </div> */}
+          
+            
+            
                   </div>
 
               </div>

@@ -1,0 +1,24 @@
+.every-in-toggle{
+    font-size: 12px;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: toggle 3.5s infinite forwards ;
+    width: 75%;
+    align-self: center;
+    margin: 0 auto;
+    transition: all 0.1s linear;
+}
+@keyframes toggle{
+    0%{
+        opacity:0;
+    }
+
+50%{
+    opacity: 1;
+    font-size: 12px;
+}
+100%{
+    opacity: 1;
+    font-size: 18px;
+}
+
+}

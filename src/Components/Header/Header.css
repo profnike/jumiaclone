@@ -36,14 +36,21 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    align-items: center;
+    
 }
-.sell-on-jumia p:hover{
+.sell-on-jumia p{
+    color: blue;
+    align-self: center;
+}
+.sell-on-jumia span:hover{
     text-decoration: underline;
 }
 .sell-and-options{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+   
 }
 .other-options{
     display: flex;
@@ -53,10 +60,12 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
     cursor: pointer;
+    
   
 }
 .other-options p{
     margin-right: 1rem;
+    margin-bottom: 0;
 }
 .other-options p:hover{
     color: orange;
@@ -109,19 +118,23 @@ body{
     outline: none;
 }
 .jumia-various-options button{
-    width: 100px;
-    height: 45px;
+    width: 90px;
+    height: 35px;
     border: none;
     background-color: orange;
     border-radius: 6px;
     padding: 10px;
     color: white;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
 .jumia-various-options button:hover{
     background-color: rgb(241, 193, 102);
 }
-.jumia-various-options p{
+.jumia-various-options span{
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -133,8 +146,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+   
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
 }
 .options-and-icons:hover{
@@ -151,6 +166,9 @@ body{
     border-radius: 100%;
     color: white;
     margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .link-sell{
     text-decoration: none;
