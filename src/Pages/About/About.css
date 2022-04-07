@@ -3,11 +3,136 @@
     margin: 0;
     box-sizing: border-box;
 }
+.about-container{
+    background-color: rgb(92, 91, 91);
+    background-color:
+rgba(40, 40, 40,10%);
+
+};
+.about-inner{
+   
+}
+.about-section-one{
+  
+    display: flex;
+    height: 100%;
+    
+}
 .about-section-one-left{
     width: 75%;
     border-radius: 4px;
+   
+    text-align: left;
+    font-size: 12px;
+    height: 700px;
 }
-.about-section-one-left{
+.about-section-one-right{
     width: 24%;
     margin-left: 1%;
+ 
+   
+}
+.about-inner{
+    width: 85%;
+    margin: 10px auto;
+    background-color: white;
+}
+
+.about-section-one-left-upper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+    width: 100%;
+    
+}
+.about-section-one-left-upper-le{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   padding-left: 25px;
+   padding-bottom: 15px;
+    height: 700px;
+}
+.about-section-one-left-upper-le img{
+    width: 100%;
+}
+.about-section-one-left-upper-ri{
+    width: 70%;
+    padding: 10px;
+    
+}
+.about-section-one-left-upper-ri-header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    color: orange;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+}
+.about-section-one-left-upper-ri-header h5{
+    font-size: 20px;
+    color: black;
+}
+.flash-about{
+    text-align: left;
+    border-radius: 4px;
+    font-size: 13px;
+    border: 1px solid red;
+    margin-bottom: 10px;
+}
+.flash-about-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+    padding: 5px;
+    color: white;
+   
+}
+.flash-about-body{
+    padding: 5px;
+}
+.flash-about-header h5{
+    font-size: 12px;
+}
+.flashandimage-about-header{
+    display: flex;
+}
+.recent-flash-about{
+    font-size: 20px;
+    font-weight: bold;
+}
+.previous-flash-about{
+    font-size: 17px;
+    text-decoration: line-through;
+   
+}
+.about-section-one-left-upper-ri button{
+    width: 100%;
+    color: white;
+    background-color: orange;
+    border-radius: 6px;
+    height: 40px;
+    border: none;
+    margin-top: 20px;
+}
+.promotions-about{
+    border-top: 1px solid grey;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+.promotions-about p{
+    color: rgb(5, 5, 88);
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 28px;
+}
+.promotions-about p:hover{
+    text-decoration: underline;
+}
+.about-image-container{
+    border-bottom: 1px solid grey;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
 }
