@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.about-section-one-left{
+    width: 75%;
+    border-radius: 4px;
+}
+.about-section-one-left{
+    width: 24%;
+    margin-left: 1%;
+}

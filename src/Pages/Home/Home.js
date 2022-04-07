@@ -2,16 +2,22 @@ import Header from '../../Components/Header/Header'
 import phone from '../../Asset/phone-jumia.png'
 import sell from '../../Asset/sell-jumia.png'
 import returns from '../../Asset/return-jumia.png'
-import jumiacenter from '../../Asset/jumia-home-one.jpg'
+// import jumiacenter from '../../Asset/jumia-home-one.jpg'
 import delivery from '../../Asset/delivry-jumia.png'
 import global from '../../Asset/global-jumia.png'
 import prime from '../../Asset/prime-jumia.png'
 import supers from '../../Asset/super-jumia.png'
-import jumiabag from '../../Asset/jumia-bag.jpg'
+// import jumiabag from '../../Asset/jumia-bag.jpg'
 import Carousell from '../../Components/Carousel/Carousel'
-import Toggle from '../../Components/Toggleanim/Toggleanim'
-import Zoom from 'react-reveal/Zoom';
-import Reveal from 'react-reveal/Reveal';
+// import Toggle from '../../Components/Toggleanim/Toggleanim'
+// import Zoom from 'react-reveal/Zoom';
+// import Reveal from 'react-reveal/Reveal';
+import flashallone from '../../Asset/flash-all-one.jpg'
+import flashalltwo from '../../Asset/flash-all-two.jpg'
+import flashallthree from '../../Asset/flash-all-three.jpg'
+import flashallfour from '../../Asset/flash-all-four.jpg'
+import flashallfive from '../../Asset/flash-all-five.jpg'
+import flashallsix from '../../Asset/flash-all-six.jpg'
 import { useState } from 'react'
 import { useRef } from 'react'
 
@@ -23,20 +29,20 @@ import { useNavigate } from 'react-router-dom'
 function Home(){
     let myRef=useRef()
     let navigate=useNavigate()
-    const [containerstyle, setContainerstyle]=useState({})
+   
     let items=[
-        {image:jumiabag,
-            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:jumiabag,
-            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
-            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
-            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
-            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
-            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"}
+        {id:"00001",image:flashallone,
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00002",image:flashalltwo,
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00003",image:flashallthree,
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00004",image:flashallfour,
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00005",image:flashallfive,
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00006",image:flashallsix,
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
     ]
     
   
@@ -151,22 +157,13 @@ function Home(){
                       </div>
                       <p>Time left: 14h :42m :55s</p>
                       <div>
-                          <p onClick={(()=>{navigate("/All/Flashsales")})} className="home-sellname">SEE ALL</p>
+                          <p onClick={(()=>{navigate("/Flashsales")})} className="home-sellname">SEE ALL</p>
                       </div>
                   </div>
                   
                   <div className='items-home'>
                  
-                 
-            {/* <div style={containerstyle} className='arr'>
-                      arrow-left
-                    
-                      </div> */}
-                     
-            
-           
-                     
-                      
+          
                      
                 
             {   items.filter((val,indx)=>{
@@ -176,7 +173,7 @@ function Home(){
                     // ind<2
                     return(
                         
-                        <ul ref={myRef} className='list-container'  key={ind}>
+                        <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
                             <li><img src={val.image} alt=""/></li>
                             <li>{val.amount}</li>
                             <li className='previous-cancel-home'>{val.previous}</li>

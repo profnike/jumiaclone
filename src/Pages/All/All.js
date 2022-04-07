@@ -4,6 +4,7 @@ import { FcFlashOn } from "react-icons/fc";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { RiArrowRightSLine } from "react-icons/ri";
 import banner from '../../Asset/flashsales.png'
+import { useNavigate } from "react-router-dom";
 // import jumiabag from '../../Asset/jumia-bag.jpg'
 import flashone from '../../Asset/flash-one.png'
 import flashtwo from '../../Asset/flash-two.png'
@@ -23,9 +24,14 @@ import flashallnine from '../../Asset/flash-all-nine.jpg'
 import flashallten from '../../Asset/flash-all-ten.jpg'
 import flashalleleven from '../../Asset/flash-all-eleven.jpg'
 import flashalltwelve from '../../Asset/flash-all-twelve.jpg'
+import flashallthirteen from '../../Asset/flash-all-thirteen.jpg'
+import flashallfourteen from '../../Asset/flash-all-fourteen.jpg'
+import flashallfifteen from '../../Asset/flash-all-fifteen.jpg'
+import flashallsixteen from '../../Asset/flash-all-sixteen.jpg'
 import Footer from '../../Components/Footer/Footer'
 import '../All/All.css'
 function All(){
+    let navigate=useNavigate()
     let items=[
         {image:flashone,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
@@ -41,30 +47,41 @@ function All(){
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"}
     ]
     let itemstwo=[
-        {image:flashallone,
+        {id:"00001",image:flashallone,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:flashalltwo,
+            {id:"00002",image:flashalltwo,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:flashallthree,
+            {id:"00003",image:flashallthree,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:flashallfour,
+            {id:"00004",image:flashallfour,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:flashallfive,
+            {id:"00005",image:flashallfive,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:flashallsix,
+            {id:"00006",image:flashallsix,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:flashallseven,
+            {id:"00007",image:flashallseven,
                 amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {image:flashalleight,
+                {id:"00008",image:flashalleight,
                 amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {image:flashallnine,
+                {id:"00009",image:flashallnine,
                 amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {image:flashallten,
+                {id:"000010",image:flashallten,
                 amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {image:flashalleleven,
+                {id:"000011",image:flashalleleven,
                 amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {image:flashalltwelve,
-                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"}
+                {id:"000012",image:flashalltwelve,
+                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                {id:"000013",image:flashallthirteen,
+                    amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                    {id:"000014",image:flashallfourteen,
+                        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                        {id:"000015",image:flashallfifteen,
+                            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                            {id:"000016",image:flashallsixteen,
+                                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            
+            
+
     ]
     return(
         <div className="flash-container">
@@ -121,7 +138,7 @@ function All(){
                     // ind<2
                     return(
                         
-                        <ul    key={ind}>
+                        <ul onClick={(()=>{navigate(`/about/${val.id}`)})}   key={ind}>
                             <div>
                            <li className="flash-list-items-all-img"><img src={val.image} alt=""/></li>
                             <li>{val.amount}</li>
