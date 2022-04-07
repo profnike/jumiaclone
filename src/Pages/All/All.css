@@ -53,4 +53,77 @@
 }
 .flash-categories{
     display: flex;
+    width: 85%;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+.shop-all-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sort-by-arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.flash-categories-right-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: aquamarine;
+    width: 100%;
+}
+.flash-categories-right{
+    background-color: cadetblue;
+    width: 75%;
+}
+.flash-categories-left{
+    background-color: red;
+    width: 25%;
+
+    height: auto;
+    height: 100px;
+    /* position: fixed; */
+}
+.items-in-flash-catg{
+    display: grid;
+    margin-right: 5px;
+    grid-template-columns:  25% 25% 25% 25%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: cadetblue;
+  
+   
+}
+.items-in-flash-catg ul{
+  text-align: left;
+   margin-right: 10px;
+   padding: 0;
+   height: 400px;
+   font-size: 12px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.flash-categories-right .items-in-flash-catg ul li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+}
+.items-in-flash-catg img{
+    width: 100%;
+    margin: 0;
+}
+.lower-parag-flash{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%;
+    border-radius: 6px;
+    background-color: beige;
+    margin: 10px auto;
+    text-align: left;
 }
