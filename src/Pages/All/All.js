@@ -1,29 +1,79 @@
 import React from "react";
 import Header from "../../Components/Header/Header";
+import { FcFlashOn } from "react-icons/fc";
+import { RiArrowDownSLine } from "react-icons/ri";
+import { RiArrowRightSLine } from "react-icons/ri";
 import banner from '../../Asset/flashsales.png'
-import jumiabag from '../../Asset/jumia-bag.jpg'
+// import jumiabag from '../../Asset/jumia-bag.jpg'
+import flashone from '../../Asset/flash-one.png'
+import flashtwo from '../../Asset/flash-two.png'
+import flashthree from '../../Asset/flash-three.png'
+import flashfour from '../../Asset/flash-four.png'
+import flashfive from '../../Asset/flash-five.png'
+import flashsix from '../../Asset/flash-six.png'
+import flashallone from '../../Asset/flash-all-one.jpg'
+import flashalltwo from '../../Asset/flash-all-two.jpg'
+import flashallthree from '../../Asset/flash-all-three.jpg'
+import flashallfour from '../../Asset/flash-all-four.jpg'
+import flashallfive from '../../Asset/flash-all-five.jpg'
+import flashallsix from '../../Asset/flash-all-six.jpg'
+import flashallseven from '../../Asset/flash-all-seven.jpg'
+import flashalleight from '../../Asset/flash-all-eight.jpg'
+import flashallnine from '../../Asset/flash-all-nine.jpg'
+import flashallten from '../../Asset/flash-all-ten.jpg'
+import flashalleleven from '../../Asset/flash-all-eleven.jpg'
+import flashalltwelve from '../../Asset/flash-all-twelve.jpg'
 import Footer from '../../Components/Footer/Footer'
 import '../All/All.css'
 function All(){
     let items=[
-        {image:jumiabag,
+        {image:flashone,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:jumiabag,
+            {image:flashtwo,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
+            {image:flashthree,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
+            {image:flashfour,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
+            {image:flashfive,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {image:"https://gh.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/93/791813/1.jpg?6649",
+            {image:flashsix,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"}
     ]
+    let itemstwo=[
+        {image:flashallone,
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:flashalltwo,
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:flashallthree,
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:flashallfour,
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:flashallfive,
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:flashallsix,
+            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+            {image:flashallseven,
+                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                {image:flashalleight,
+                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                {image:flashallnine,
+                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                {image:flashallten,
+                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                {image:flashalleleven,
+                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                {image:flashalltwelve,
+                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"}
+    ]
     return(
-        <div>
+        <div className="flash-container">
            <Header>
-               <div className="flashbody">
-               <p>Home Flash Sales</p>
+               <div id="flashbody">
+              
+               </div>
+               <div className="flash-b">
+               <p>Home </p><RiArrowRightSLine/><p>Flash Sales</p>
                </div>
                <div className="flash-banner">
                     <img src={banner} alt=""/>
@@ -37,7 +87,7 @@ function All(){
                     return(
                         
                         <ul    key={ind}>
-                            <li><img src={val.image} alt=""/></li>
+                            <li className="image-container-all"><img src={val.image} alt=""/></li>
                             <li className="flash-item-name">{val.amount}</li>
                             
                         </ul>
@@ -56,26 +106,24 @@ function All(){
                    <div className="flash-categories-right">
                        <div className="flash-categories-right-header">
                            <div className="shop-all-header">
-                               image
+                           <FcFlashOn/>
                                <h5>Shop All Product</h5>
                            </div>
                            <div className="sort-by-arrow">
-                               <h5>Sort by: Popularity</h5>
-                               arrow down
+                               <h6>Sort by: <span>Popularity</span></h6>
+                               <RiArrowDownSLine/>
                            </div>
 
                        </div>
                        <div className="items-in-flash-catg">
-                       {   items.filter((val,indx)=>{
-                return(indx<6)
-            })
-                .map((val,ind)=>{
+                      
+                       {   itemstwo.map((val,ind)=>{
                     // ind<2
                     return(
                         
                         <ul    key={ind}>
                             <div>
-                           <li><img src={val.image} alt=""/></li>
+                           <li className="flash-list-items-all-img"><img src={val.image} alt=""/></li>
                             <li>{val.amount}</li>
                             <li className='previous-cancel-home'>{val.previous}</li>
                             <li>{val.amtleft}</li>

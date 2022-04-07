@@ -1,4 +1,15 @@
 import React from "react";
+import { FaFacebookF } from "react-icons/fa";
+import { FaCoins } from "react-icons/fa";
+import { FaGooglePlay } from "react-icons/fa";
+
+import { BsInstagram} from "react-icons/bs";
+import { BsTwitter} from "react-icons/bs";
+import { SiVisa } from "react-icons/si";
+import { RiMastercardLine } from "react-icons/ri";
+import {BsCart4 } from "react-icons/bs";
+import { BsApple } from "react-icons/bs";
+
 import '../Footer/Footer.css'
 function Footer(){
     return(
@@ -9,7 +20,7 @@ function Footer(){
                 <h2>JUMIA</h2>
                 </div>
                 <div className="footer-category-two">
-                    <h3>New To Jumia</h3>
+                <h5>New To Jumia ?</h5>
                     <p>Subscribe to our newsletter to get updates on our latest offers!</p>
                     <div className="input-button-footer">
                     <input placeholder="Enter E-mail Address"/>
@@ -24,15 +35,17 @@ function Footer(){
                 <div className="footer-category-three">
                     <div>
                         <div className="image-jumia-free-footer">
-                    image
+                   <div className="footer-orange-basket">
+                    <BsCart4/>
+                   </div>
                     <div>
-                        <h4>DOWNLOAD JUMIA FREE APP</h4>
+                    <h5>DOWNLOAD JUMIA FREE APP</h5>
                         <p>Get access to exclusive offers!</p>
                         </div>
                         </div>
                         <div className="apple-google-footer">
-                            <button>APPLE</button>
-                            <button>GOOGLE</button>
+                            <div className="apple-google-footer-catg" ><BsApple/><div className="get-it-google-footer"><p className="get-it-except">Download on the </p><p>APP STORE</p></div></div>
+                            <div className="apple-google-footer-catg"> <FaGooglePlay/><div className="get-it-google-footer"><p className="get-it-except">GET IT ON</p><p> GOOGLE</p></div></div>
                         </div>
 
                     </div>
@@ -66,7 +79,7 @@ function Footer(){
     <p>Black Friday</p>
         </div>
         <div className="lower-footer-catg">
-         <h6>MAKE MONEY WITH JUMIA</h6>
+         <h5>MAKE MONEY WITH JUMIA</h5>
          <p>Sell on Jumia</p>
          <p>Service charges</p>
          <p>Become a Sales Consultant</p>
@@ -104,25 +117,38 @@ function Footer(){
             <div className="lower-footer-two-items">
             <h5>JOIN US ON
             </h5>
+            <div className="lower-footer-two-icons"> 
+            <div>
+            <FaFacebookF/></div>
+            <div><BsInstagram/></div>
+            <div><BsTwitter/></div>
+            </div>
             </div>
             <div className="lower-footer-two-items">
             <h5>PAYMENT METHODS</h5>
+            <div className="lower-footer-two-icons"> 
+            <div>
+            <FaCoins/></div>
+            <div><SiVisa/></div>
+            <div><RiMastercardLine/></div>
+            </div>
+           
             </div>
             </div>
 
             <div className="lower-foot-inner-three">
                 <div className="lower-foot-inner-three-item" >
-                    <p>FOOD</p>
+                <h5>FOOD</h5>
                    
                 </div>
                 <div className="lower-foot-inner-three-item" >
-                    <p>PAY</p>
+                <h5>PAY</h5>
                 </div>
                 <div className="lower-foot-inner-three-item" >
-                    <p>PRIME</p>
+                <h5>PRIME</h5>
                 </div>
                 <div className="lower-foot-inner-three-item" >
-                    <p>LOGISTICS</p>
+                    <h5>LOGISTICS</h5>
                 </div>
                
             </div>
