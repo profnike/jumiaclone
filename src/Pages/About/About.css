@@ -74,6 +74,15 @@ rgba(40, 40, 40,10%);
 .about-section-one-left-upper-ri-header h5{
     font-size: 20px;
     color: black;
+    width: 85%;
+}
+.love-div-about{
+    align-items: flex-start;
+    display: flex;
+    font-size: 25px;
+    align-self: flex-start;
+    margin: 0;
+  
 }
 .flash-about{
     text-align: left;

@@ -29,38 +29,43 @@ function About(){
     let params=useParams()
     console.log(params.id)
     let allItems=[
-      {id:"00001",image:flashallone,
+        {id:"00001",image:flashallone,name:"Xiaomi Redmi Note 10 Pro  6.67 Android 11",
+       
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00002",image:flashalltwo,name:"Samsung USB 3.0 Metallic Pendrive - 64GB - Silver",
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00003",image:flashallthree, name:"1.5M 5FT Braided Micro USB Charger Data Sync Cable Cord For Android Phone",
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00004",image:flashallfour,name:"P47 Headphones Overhead Wireless EarpieceBluetooth Earphone ",
+         
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00005",image:flashallfive, name:"2.5'' Inch 2TB Portable USB 2.0/3.0 SATA SSD Hard",
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00006",name:"Microsoft Xbox 360 Wired USB Controller",image:flashallsix,
+        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        {id:"00007",image:flashallseven, name:"Samsung USB 3.1 BAR Pendrive - 64GB - Sliver- Buy 1 Get 1 Free + Free Smart OTG",
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {id:"00002",image:flashalltwo,
+            {id:"00008",image:flashalleight, name:"MinMax Durable 3 in 1 Heavy Duty Commercial Blender - 1.5L" ,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {id:"00003",image:flashallthree,
+            {id:"00009",image:flashallnine, name:"1.5M 5FT Braided Micro USB Charger Data Sync Cable Cord For Android Phone",
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {id:"00004",image:flashallfour,
+            {id:"000010",image:flashallten,name:"Seagate Backup Plus Slim Hard Drive ",
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {id:"00005",image:flashallfive,
+            {id:"000011",image:flashalleleven, name:"Pair Novelty Soft Silicone Earphone Case Headphone Earpods Cover Eartip ",
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {id:"00006",name:"Microsoft Xbox 360 Wired USB Controller",image:flashallsix,
+            {id:"000012",image:flashalltwelve, name:"Seagate STEA4000400 Expansion USB 3.0 Portable Hard Drive ",
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-            {id:"00007",image:flashallseven,
+            {id:"000013",image:flashallthirteen, name:"TCL 32S60A Smart Android TV ",
                 amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {id:"00008",image:flashalleight,
-                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {id:"00009",image:flashallnine,
-                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {id:"000010",image:flashallten,
-                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {id:"000011",image:flashalleleven,
-                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {id:"000012",image:flashalltwelve,
-                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                {id:"000013",image:flashallthirteen,
+                {id:"000014",image:flashallfourteen, name:"Delron 2 Slice Sandwich Maker",
                     amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                    {id:"000014",image:flashallfourteen,
+                    {id:"000015",image:flashallfifteen, name:"Lindy Portable Fabric Wardrobe",
                         amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                        {id:"000015",image:flashallfifteen,
+                        {id:"000016",image:flashallsixteen, name:"Adonko Adonko 123 Bitters",
                             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
-                            {id:"000016",image:flashallsixteen,
-                                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        
+        
+
             
             
 
@@ -103,7 +108,9 @@ function About(){
                             <div className="about-section-one-left-upper-ri">
                                 <div className="about-section-one-left-upper-ri-header">
                                     <h5>{name} </h5>
+                                    <div className="love-div-about">
                                     <GiSelfLove/>
+                                    </div>
                                 </div>
                                 <div className="flash-about">
                                     <div className="flash-about-header">

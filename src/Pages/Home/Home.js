@@ -24,6 +24,7 @@ import { useRef } from 'react'
 
 import "../Home/Home.css"
 import { useNavigate } from 'react-router-dom'
+import Footer from '../../Components/Footer/Footer'
 
 
 function Home(){
@@ -202,6 +203,7 @@ function Home(){
 
           </div>
           </Header>
+          <Footer/>
         </div>
 
     )

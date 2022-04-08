@@ -45,3 +45,16 @@
     color: orange;
     margin-bottom: 20px;
 }
+.cart-inner-content{
+    background-color: white;
+    text-align: left;
+    width: 85%;
+    margin: 20px auto;
+    border-radius: 5px;
+    padding: 20px;
+    
+}
+.cart-inner-content .header{
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
