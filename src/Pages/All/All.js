@@ -141,8 +141,8 @@ function All(){
                     // ind<2
                     return(
                         
-                        <ul onClick={(()=>{navigate(`/about/${val.id}`)})}   key={ind}>
-                            <div>
+                        <ul    key={ind}>
+                            <div onClick={(()=>{navigate(`/about/${val.id}`)})}>
                            <li className="flash-list-items-all-img"><img src={val.image} alt=""/></li>
                             <li>{val.amount}</li>
                             <li className='previous-cancel-home'>{val.previous}</li>

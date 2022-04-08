@@ -5,14 +5,16 @@ import { FiHelpCircle } from "react-icons/fi";
 import { AiOutlineStar } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiSearchAlt2 } from "react-icons/bi";
-
-
+import cartContext from "../../Context/Cart/CartContext";
+import { useContext } from "react";
 import "../Header/Header.css"
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
+
 import { useEffect, useState } from "react";
 
 function Header({children}){
-  
+    const navigate= useNavigate()
+    const {cartItems} =useContext(cartContext)
     const [valobj,setValobj]=useState({styl:{top:"auto",backgroundColor:'white',maxWidth:"100%"}, valu:false})
    
   useEffect(()=>{
@@ -77,7 +79,7 @@ function Header({children}){
                 <button>SEARCH</button>
                <div className="options-and-icons"> <FaRegUser/><span>Account</span><FaChevronDown/></div>
                <div className="options-and-icons"><FiHelpCircle/><span>Help</span><FaChevronDown/></div>
-               <div className="options-and-icons"><AiOutlineShoppingCart/><span>Cart</span></div>
+               <div className="options-and-icons" onClick={()=>{navigate("/Cart")}}><AiOutlineShoppingCart/><span>{cartItems.length > 0 && (<div className="item-count">{cartItems.length}</div>)}</span><span>Cart</span></div>
                </div>
                </div>
                {children}
