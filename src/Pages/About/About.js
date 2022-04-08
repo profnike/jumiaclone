@@ -21,9 +21,11 @@ import flashallfifteen from '../../Asset/flash-all-fifteen.jpg'
 import flashallsixteen from '../../Asset/flash-all-sixteen.jpg'
 import '../About/About.css'
 import Footer from "../../Components/Footer/Footer";
-
+import cartContext from "../../Context/Cart/CartContext";
+import {useContext} from 'react';
 
 function About(){
+    const{addToCart}=useContext(cartContext)
     let params=useParams()
     console.log(params.id)
     let allItems=[
@@ -63,6 +65,7 @@ function About(){
             
 
     ]
+   
     let test=allItems.filter((val,ind)=>{
         return val.id===params.id
 
@@ -72,12 +75,14 @@ function About(){
     let previous=""
     let recent=""
     let itemLeft=""
+    let value={}
     test.map((val,id)=>{
         source=val.image
         name=val.name
         previous=val.previous
         recent=val.amount
         itemLeft=val.amtleft
+        value=val
     })
     console.log(source)
     return(
@@ -117,7 +122,7 @@ function About(){
                                 </div>
                                 <p>Order above GHC 80 on Jumia Express
                                      items & get free delivery | regular delivery from GH₵ 4.02 to Tema</p>
-                            <button>ADD TO CART</button>
+                            <button onClick={()=> addToCart(value)}>ADD TO CART</button>
                             <div className="promotions-about">
                                 <h5>PROMOTIONS</h5>
                                 <p>Enjoy 5% instant cashback on airtime & data on JumiaPay. Use code:MOBS</p>

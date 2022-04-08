@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "../../Components/Header/Header";
 import { FcFlashOn } from "react-icons/fc";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -29,8 +29,11 @@ import flashallfourteen from '../../Asset/flash-all-fourteen.jpg'
 import flashallfifteen from '../../Asset/flash-all-fifteen.jpg'
 import flashallsixteen from '../../Asset/flash-all-sixteen.jpg'
 import Footer from '../../Components/Footer/Footer'
+
+import cartContext from "../../Context/Cart/CartContext";
 import '../All/All.css'
 function All(){
+    const{addToCart}=useContext(cartContext)
     let navigate=useNavigate()
     let items=[
         {image:flashone,
@@ -149,7 +152,7 @@ function All(){
                                 (Excluding large items)
                             </p>
                             </div>
-                            <button>Add To Cart</button>
+                            <button onClick={()=>addToCart(val)}>Add To Cart</button>
                             
                         </ul>
                         
