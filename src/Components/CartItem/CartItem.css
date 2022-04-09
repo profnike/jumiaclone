@@ -4,10 +4,9 @@
     box-sizing: border-box;
 }
 .container-cart-content{
-    /* width: 85%;
-    margin: 0px auto; */
+    background-color: aquamarine;
     background-color: white;
-   
+  
 
 }
 .upper-section-cart{
@@ -36,4 +35,7 @@
     border-bottom: 1px solid grey;
     padding-bottom: 20px;
     /* margin-bottom: 20px; */
+}
+.button-div-cartitem{
+    width: 15%;
 }

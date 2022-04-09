@@ -29,12 +29,16 @@ import flashallfourteen from '../../Asset/flash-all-fourteen.jpg'
 import flashallfifteen from '../../Asset/flash-all-fifteen.jpg'
 import flashallsixteen from '../../Asset/flash-all-sixteen.jpg'
 import Footer from '../../Components/Footer/Footer'
-
+import Itembutton from "../../Components/Itembutton/Itembutton";
 import cartContext from "../../Context/Cart/CartContext";
 import '../All/All.css'
+import CartItem from "../../Components/CartItem/CartItem";
 function All(){
     const{addToCart}=useContext(cartContext)
     let navigate=useNavigate()
+    let value={}
+    let num={}
+    const{cartItems}=useContext(cartContext)
     let items=[
         {image:flashone,
             amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
@@ -157,7 +161,24 @@ function All(){
                                 (Excluding large items)
                             </p>
                             </div>
-                            <button onClick={()=>addToCart(val)}>Add To Cart</button>
+                           
+                            {cartItems.some((p,ind)=>p.id===val.id )?(
+                               
+                                 num = cartItems.find((valu)=>{
+                                 
+                                return(
+                                valu.id===val.id
+                                )
+                               
+                            }),
+                            <div className="quantity-all-items-div">
+                               <Itembutton val={num}/>
+                               </div>
+                               
+                               )
+                                
+                            :(  <button onClick={()=>addToCart(val)}>Add To Cart</button>)}
+                          
                             
                         </ul>
                         

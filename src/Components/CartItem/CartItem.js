@@ -2,12 +2,20 @@ import React from 'react'
 import cartContext from '../../Context/Cart/CartContext';
 import { useContext } from 'react';
 import '../CartItem/CartItem.css'
+import Itembutton from '../Itembutton/Itembutton';
 
 const CartItem = ({item}) => {
   
     const{cartItems}=useContext(cartContext)
+    let value={}
+    value=cartItems.find((valu)=>{
+     return(
+      valu.id===item.id
+     )
+     })
   return (
     <div className='container-cart-content'>
+      <div>
       <div className='upper-section-cart'>
                 {/* <h5>Cart ( {cartItems.length} )
                </h5> */}
@@ -27,14 +35,13 @@ const CartItem = ({item}) => {
             <div>
                 <h5>REMOVE</h5>
             </div>
-            <div>
-                <span>-</span>
-                1
-                <span>+</span>
+            <div className='button-div-cartitem'>
+            <Itembutton val={value}/>
             </div>
             </div>
             </div>
-
+            </div>
+            
     </div>
   )
 }

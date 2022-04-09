@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.item-present-in-cart{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.item-present-in-cart p{
+    min-width: 25%;
+    height: 27px;
+    margin-right: 10px;
+    max-width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.color-orange{
+    border-radius: 3px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}

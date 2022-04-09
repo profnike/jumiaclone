@@ -11,13 +11,27 @@ import "../Header/Header.css"
 import { Link,useNavigate} from "react-router-dom";
 
 import { useEffect, useState } from "react";
+import { queryByTestId } from "@testing-library/react";
 
 function Header({children}){
+    const[qty,setQty]=useState(0)
     const navigate= useNavigate()
     const {cartItems} =useContext(cartContext)
     const [valobj,setValobj]=useState({styl:{top:"auto",backgroundColor:'white',maxWidth:"100%"}, valu:false})
    
+    let amount= 0
+    cartItems.map((val)=>{
+        
+        
+        amount+= val.quantity
+       console.log(amount)
+   
+
+    })
+    // setQty(amount)
+    console.log(amount)
   useEffect(()=>{
+
        
          window.addEventListener('scroll',func)
          function func(){
@@ -79,7 +93,10 @@ function Header({children}){
                 <button>SEARCH</button>
                <div className="options-and-icons"> <FaRegUser/><span>Account</span><FaChevronDown/></div>
                <div className="options-and-icons"><FiHelpCircle/><span>Help</span><FaChevronDown/></div>
-               <div className="options-and-icons" onClick={()=>{navigate("/Cart")}}><AiOutlineShoppingCart/><span>{cartItems.length > 0 && (<div className="item-count">{cartItems.length}</div>)}</span><span>Cart</span></div>
+               <div className="options-and-icons" onClick={()=>{navigate("/Cart")}}><AiOutlineShoppingCart/><span>{cartItems.length > 0 && (<div className="item-count">
+                   {amount}
+                   
+                   </div>)}</span><span>Cart</span></div>
                </div>
                </div>
                {children}

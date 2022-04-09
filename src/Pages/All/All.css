@@ -181,6 +181,7 @@ rgba(40, 40, 40,10%);
     width: 100%;
     height: 30px;
     border: none;
+    border-radius: 3px;
 }
 .items-in-flash-catg ul:hover{
     transform: scale(1.03);
@@ -212,4 +213,11 @@ rgba(40, 40, 40,10%);
     height: 180px;
     padding: 0;
     
+}
+.quantity-all-items-div{
+    margin-bottom: 5px;
+   
+    width: 100%;
+   display: flex;
+   justify-content: center;
 }
