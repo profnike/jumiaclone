@@ -33,17 +33,17 @@ function Home(){
    
     let items=[
         {id:"00001",image:flashallone,
-        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
         {id:"00002",image:flashalltwo,
-        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
         {id:"00003",image:flashallthree,
-        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
         {id:"00004",image:flashallfour,
-        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
         {id:"00005",image:flashallfive,
-        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
         {id:"00006",image:flashallsix,
-        amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+        amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
     ]
     
   

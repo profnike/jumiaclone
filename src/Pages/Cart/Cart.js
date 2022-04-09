@@ -15,11 +15,21 @@ const Cart = () => {
     const navigate=useNavigate()
     const{cartItems}=useContext(cartContext)
     let amount= 0
+    let total=0
+    let totals=0
     cartItems.map((val)=>{
         
         
         amount+= val.quantity
-       console.log(amount)
+      
+   
+
+    })
+    cartItems.map((val)=>{
+        
+        let qty=val.quantity
+        total+= (val.amount*qty)
+         totals=total.toFixed(2);
    
 
     })
@@ -51,7 +61,16 @@ const Cart = () => {
         }
         </div>
         <div className='cart-inner-content-right'>
-
+        <h5>CART SUMMARY</h5>
+        <div>
+            <h5>Subtotal</h5>
+            <h2>{totals}</h2>
+        </div>
+        <div>
+            image
+            <p>Jumia Express items are eligible for free delivery </p>
+        </div>
+        <button onClick={(()=>{navigate("/customer/account/login")})}>CHECKOUT {total}</button>
         </div>
         </div>)
         }

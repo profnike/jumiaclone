@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.createaccount-container{
+    width: 55%;
+    margin: 20px auto;
+    text-align: left;
+}
+.createaccount-container h5{
+    color: orange;
+}
+.createaccount-container span{
+    color: orange;
+}
+.createaccount-container  .prefix-input-create{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 55px;
+    width: 48%;
+    margin-right: 2%;
+}
+.prefix-input-create input{
+    
+    margin-left: 15px;
+    align-self: center;
+    height: 55px;
+   
+}
+.pref-num-create{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-bottom: 0;
+    align-self: flex-start;
+    font-size: 10px;
+}
+.create-num{
+    font-size: 17px;
+}
+.create-input-flex{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    /* align-items: s; */
+    width: 48%;
+    margin-right: 2%;
+    
+}
+.create-input-flex div{
+    width: 100%;
+    
+    padding: 0;
+    display: flex;
+}
+.create-input-flex input{
+    margin-bottom: 20px;
+}
+.createaccount-container input{
+    height: 55px;
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    /* margin-bottom: 20px; */
+}
+.create-inner-input-container{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.inner-input-right{
+    width: 48%;
+    margin-right: 0%;
+}
+.already-have-acct-div{
+    text-align: center;
+}
+.already-have-acct-div h5{
+    cursor: pointer;
+}
+.already-have-acct-div h5{
+    font-size: 14px;
+}
+.already-have-acct-div h5:hover{
+    width: 50px;
+    padding: 1.5px;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(248, 214, 220);
+}
+.checkbox-and-parag p{
+    width: 40%;
+    margin-bottom: 30px;
+}
+.createaccount-container button{
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    height: 40px;
+    color: white;
+    background-color: orange;
+    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: bold;
+}
