@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.inner-checkout{
+    width: 85%;
+    margin: 20px auto;
+   
+}
+.checkout-inner-container{
+    background-color: #FAFAFE;
+    display: flex;
+    justify-content: space-between;
+}
+.checkout-areas{
+    background-color: white;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.inner-checkout-left{
+   
+    width: 74%;
+    margin-right: 1%;
+   
+    text-align: left;
+}
+.inner-checkout-rightt{
+    background-color: white;
+    width: 25%;
+    border-radius: 6px;
+}
+.section-one{
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 35px;
+}
+.section-one h5{
+    margin-bottom: 0;
+}
+.circle-one{
+    border-radius: 100%;
+    margin-right: 20px;
+    background-color: rgb(156, 153, 153);
+    height: 20px;
+    width: 20px;
+    margin-left: 15px;
+}
+.section-two{
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-bottom: 20px;
+    text-align: left;
+    border-top: 1px solid grey;
+}
+.section-two button{
+    width: 100%;
+    color: white;
+    background-color: orange;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 40px;
+    border: none;
+    margin-top: 25px;
+}
+.checkout-sectwo-input{
+    display: flex;
+    width: 100%;
+   margin-top: 20px;
+    margin-bottom: 20px;
+}
+.checkout-sectwo-input-div{
+    width: 50%;
+}
+.checkout-sectwo-input-div-left{
+    margin-right: 2%;
+}
+.checkout-sectwo-input-div input{
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    margin-top: 5px;
+}
+.mobile-code-checkout{
+    border: 1px solid grey;
+    width: 9%;
+    height: 40px;
+    margin-right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    margin-bottom: 0;
+}
+.code-and-phone-checkout{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+   
+}
+.code-and-phone-checkout input{
+    width: 90%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    align-self: center;
+}
+.parag-textarea textarea{
+    height: 150px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+.parag-textarea{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.parag-textarea-state input{
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+.parag-textarea-state{
+    margin-bottom: 20px;
+}
+.parag-textarea-city input{
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+.parag-textarea-city{
+    margin-bottom: 20px;
+}

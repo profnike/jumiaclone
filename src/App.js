@@ -6,7 +6,9 @@ import About from './Pages/About/About';
 import Cart from './Pages/Cart/Cart'
 import './App.css';
 import Createaccount from './Pages/Createaccount/Createaccount';
+
 import LoginCreate from './Pages/LoginCreate/LoginCreate';
+import Checkout from './Pages/Checkout/Checkout';
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       <Route exact path="/Cart" element={<Cart/>}/>
       <Route exact path="/Createaccount" element={<Createaccount/>}/>
       <Route exact path="/customer/account/login" element={<LoginCreate/>}/>
+      <Route exact path="/onepage/checkout/address" element={<Checkout/>}/>
       </Routes>
       {/* const params=useParams()
     let current=params.id

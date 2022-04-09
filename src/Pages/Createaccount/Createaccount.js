@@ -42,7 +42,7 @@ const Createaccount = () => {
             <div className='checkbox-and-parag'>
               <p>I want to receive Jumia Newsletters with best deals and offers</p>
             </div>
-            <button>CREATE ACCOUNT</button>
+            <button onClick={(()=>{navigate("/onepage/checkout/address")})}>CREATE ACCOUNT</button>
             <div className='already-have-acct-div'>
             <p>Already have an account</p>
             <h5 onClick={(()=>{navigate("/customer/account/login")})}>LOGIN</h5>
