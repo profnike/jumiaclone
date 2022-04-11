@@ -17,6 +17,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid grey;
+    padding-top: 10px;
 }
 .lower-section-cart-imageamount-left{
     display: flex;
@@ -32,10 +34,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid grey;
-    padding-bottom: 20px;
-    /* margin-bottom: 20px; */
+    /* border-top: 1px solid grey; */
+    padding-bottom: 10px;
+   /* margin-top: 10px; */
 }
 .button-div-cartitem{
     width: 15%;
+}
+.remove-from-cart{
+  margin-left: 10px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.remove-from-cart-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.remove-from-cart-div:hover{
+    background-color: rgb(248, 214, 220);
+    padding: 10px;
+   
 }

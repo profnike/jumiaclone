@@ -61,16 +61,13 @@ const Cart = () => {
         }
         </div>
         <div className='cart-inner-content-right'>
-        <h5>CART SUMMARY</h5>
-        <div>
+        <h5 className='cart-summary-head'>CART SUMMARY</h5>
+        <div className='cart-summary-body'>
             <h5>Subtotal</h5>
-            <h2>{totals}</h2>
+            <h2>GHC {totals}</h2>
         </div>
-        <div>
-            image
-            <p>Jumia Express items are eligible for free delivery </p>
-        </div>
-        <button onClick={(()=>{navigate("/customer/account/login")})}>CHECKOUT {total}</button>
+       
+        <button onClick={(()=>{navigate("/customer/account/login")})}>CHECKOUT GHC {total}</button>
         </div>
         </div>)
         }

@@ -3,6 +3,8 @@ import cartContext from '../../Context/Cart/CartContext';
 import { useContext } from 'react';
 import '../CartItem/CartItem.css'
 import Itembutton from '../Itembutton/Itembutton';
+import { AiTwotoneDelete } from "react-icons/ai";
+
 
 const CartItem = ({item}) => {
   
@@ -32,8 +34,9 @@ const CartItem = ({item}) => {
             </div>
             </div>
             <div className='lower-section-second'>
-            <div>
-                <h5>REMOVE</h5>
+            <div className='remove-from-cart-div'>
+              <AiTwotoneDelete/>
+                <h5 className='remove-from-cart'>REMOVE</h5>
             </div>
             <div className='button-div-cartitem'>
             <Itembutton val={value}/>

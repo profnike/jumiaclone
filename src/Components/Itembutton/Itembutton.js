@@ -12,7 +12,7 @@ const Itembutton = ({val}) => {
     <div className="item-present-in-cart">
                                     <p onClick={()=>reduceItem(val)} className="color-orange" >-</p>
                                     <p>{val.quantity}</p>
-                                    {console.log(val)}
+                                    
                                     <p onClick={()=>addToCart(val)} className="color-orange">+</p>
                                 </div>
   )
