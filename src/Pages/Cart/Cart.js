@@ -67,7 +67,7 @@ const Cart = () => {
             <h2>GHC {totals}</h2>
         </div>
        
-        <button onClick={(()=>{navigate("/customer/account/login")})}>CHECKOUT GHC {total}</button>
+        <button onClick={(()=>{navigate("/customer/account/login")})}>CHECKOUT GHC {totals}</button>
         </div>
         </div>)
         }

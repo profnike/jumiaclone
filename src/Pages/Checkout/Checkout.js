@@ -11,8 +11,10 @@ const Checkout = () => {
     const[delivery, setDelivery]=useState(false)
     const[feeval, setFeeval]=useState(false)
     const[addcolor, setaddcolor]=useState({})
-    const[localfee,setLocalfee]=useState("N.A")
-    const[totalfee,settotalfee]=useState("N.A")
+    const[localfee,setLocalfee]=useState("N.A.")
+    const[totalfee,settotalfee]=useState("N.A.")
+    const[pick, setPick]=useState(false)
+    const[home, setHome]=useState(false)
     const[deliverycolor, setdeliverycolor]=useState({})
 
     let amount= 0
@@ -26,7 +28,7 @@ const Checkout = () => {
    
 
     })
-    let feetotals = 34.22+totals
+    let feetotals = 34.22+ (+totals)
   return (
     <div>
         <Header>
@@ -79,7 +81,10 @@ const Checkout = () => {
                     (<div className='checkout-areas'>
                          <section className='section-one'>
                         <p style={addcolor} className='circle-one'></p>
+                        <div className='header-change-checkout'>
                         <h5>1. ADDRESS DETAILS</h5>
+                        <p onClick={(()=>{setAddress(true)})}>CHANGE</p>
+                        </div>
                     </section>
                     <section className='section-two'>
                         Myname is great
@@ -87,27 +92,31 @@ const Checkout = () => {
                     </div>)
                 }
                     <div className='checkout-areas'>
+                    {delivery===true ? 
+                    (<div>
                     <section className='section-one'>
-                        <p style={deliverycolor} className='circle-one'></p>
+                        <p  className='circle-one'></p>
                         <h5>2. DELIVERY METHOD</h5>
                         </section>
+                       
+                       
                         <section className='section-two'>
                         <h5 className='how-do-you'>How do you want your order delivered ?</h5>
                         <div className='input-div-delivery-method'>
-                        <input onClick={(()=>{setFeeval(true)})} name="delivery" type="radio" alt=""/>
+                        <input onClick={(()=>{setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.")})} name="delivery" type="radio" alt=""/>
                         <div>
                             <h5>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
                             <p>Ready for pickup between <span>Thursday 21 Apr</span> and  
-                            <span>Wednesday 27 Apr</span> with cheaper shopping fees</p> 
+                            <span> Wednesday 27 Apr</span> with cheaper shopping fees</p> 
                             <h4 className='pick-up-checkout'>SELECT PICKUP STATION</h4>
                             </div>
                             </div>
                             <div className='input-div-delivery-method-next'>
-                        <input onClick={(()=>{setLocalfee("GHC 34.22"); settotalfee(`GHC ${feetotals}`)})} name="delivery" type="radio" alt="" />
+                        <input onClick={(()=>{setFeeval(true);setPick(false);setHome(true);setLocalfee("GHC 34.22"); settotalfee(`GHC  ${feetotals}`)})} name="delivery" type="radio" alt="" />
                         <div>
                             <h5>Home & Office Delivery</h5>
                             <p> Normally delivered between <span className='span'>Thursday 21 Apr</span> and 
-                            <span className='span'>Wednesday 27 Apr</span>. Please check exact dates at the Checkout page for 
+                            <span className='span'> Wednesday 27 Apr</span>. Please check exact dates at the Checkout page for 
                             <span id='amount-for-in-checkout'> GHC 34.22 </span></p>
                             <div className='note-in-checkout'> 
                             *Living in Greater Accra <span>JUMIA PRIME </span> Members enjoy Free Delivery on all Jumia Local Items 
@@ -128,13 +137,102 @@ const Checkout = () => {
                         </div>
                         </div>
                        
+                       
+                        <div className='subtotal-amt-checkout left-region'>
+                            <div>
+                            <p>Subtotal</p>
+                            <p>GHC {totals}</p>
+                            </div>
+                            
+                               <div>
+                                      <p>Local Delivery Fees</p>
+                                      <h5 className='fees-h5'>{localfee}</h5>
+                                  </div>
+                           
+
+
+                        </div>
+                       <div className='total-and-full-amount'>
+                            <b><p>Total</p></b>
+                                      <h5 className='fees-h5'>{totalfee}</h5>
+                        </div>
                         </section>
+                        <p className='voucher-checkout'> You will be able to add a voucher in the next step</p>
+                        <div className='button-div-checkout'>
+                        <button onClick={(()=>{setdeliverycolor({backgroundColor:"green"});setDelivery(false)})} className='proceed-button-checkout'>PROCEED TO NEXT STEP</button>
+                        </div>
+                        </div>):
+                        (<div>
+                            <section className='section-one'>
+                        <p style={deliverycolor} className='circle-one'></p>
+                        <div className='header-change-checkout'>
+                        <h5>2. DELIVERY METHOD</h5>
+                        <p onClick={(()=>{setDelivery(true)})}>CHANGE</p>
+                        </div>
+                        </section>
+                        <section className='section-two'>
+                            {
+                                pick===true ?(
+                                    <div className='input-div-delivery-methods'>
+                                        <h5>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
+                            <p>Ready for pickup between <span>Thursday 21 Apr</span> and  
+                            <span> Wednesday 27 Apr</span> with cheaper shopping fees</p> 
+
+                                    </div>
+                                ):(
+                                    <div className='input-div-delivery-method-nexts' >
+                                        
+                                        <h5>Home & Office Delivery</h5>
+                                       
+                            <p> Normally delivered between <span className='span'>Thursday 21 Apr</span> and 
+                            <span className='span'> Wednesday 27 Apr</span>. Please check exact dates at the Checkout page for 
+                            <span id='amount-for-in-checkout'> GHC 34.22 </span></p>
+                                    </div>
+                                )
+                            }
+
+                        </section>
+                        
+                        </div>
+                        )}
+                        
+                        
+                    
+                    </div>
+                   
+                    <div className='checkout-areas'>
+                    <section className='section-one'>
+                        <p  className='circle-one'></p>
+                        <h5>3. PAYMENT METHOD</h5>
+                        </section>
+                        <section className='section-two'>
+                        <h5>How do you want to pay for your order ?</h5>
+                        <div className='input-text-payment-option'>
+                            <input name="payment" type="radio" alt="" checked={true}/>
+                            <div className='image-payment-option'>
+                                <p>Pay Now 10% off up to 20 GHS Instant Discount. Pay safe Pay Easy.</p>
+                            </div>
+                        </div>
+                        <div className='input-text-payment-option'>
+                            <input name="payment" type="radio" alt=""/>
+                            <div className='image-payment-option'>
+                            <p>Jumia Sales Agent.</p>
+                            </div>
+                        </div>
+                        <div className='input-text-payment-option'>
+                            <input name="payment" type="radio" alt=""/>
+                            <div className='image-payment-option'>
+                            <p>Bank Deposit/Transfer </p>
+                            </div>
+                        </div>
+                        </section>
+
                     </div>
                 </div>
                 <div className='inner-checkout-right'>
                     <div className='inner-checkout-right-upper'>
                         <h5>YOUR ORDER</h5>
-                        
+                        <div className='cartitems-mapped-in-checkout-container'>
                         {cartItems.map((val)=>{ 
                            
                             return(
@@ -152,6 +250,7 @@ const Checkout = () => {
                         </div>
                         )
                         })}
+                        </div>
                         <div className='subtotal-amt-checkout'>
                             <div>
                             <p>Subtotal</p>
