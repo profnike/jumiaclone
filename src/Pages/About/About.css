@@ -145,3 +145,22 @@ rgba(40, 40, 40,10%);
     padding-bottom: 30px;
     margin-bottom: 10px;
 }
+.share-product{
+    font-size: 14px;
+}
+.share-product-icons{
+    margin-top: 10px;
+}
+.share-product-icons span:hover{
+    color: orange;
+    border-color: orange;
+}
+.share-product-icons span{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 100%;
+}

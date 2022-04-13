@@ -60,10 +60,10 @@ const Createaccount = () => {
               <input placeholder='Phone Number (optional)'/>
             </div>
             <div className='checkbox-and-parag'>
-              <p>I accept the <span>Terms & Conditions</span> and Privacy and Cookie Notice</p>
+            <input type="checkbox"/> <p>I accept the <span>Terms & Conditions</span> and Privacy and Cookie Notice</p>
             </div>
             <div className='checkbox-and-parag'>
-              <p>I want to receive Jumia Newsletters with best deals and offers</p>
+            <input type="checkbox"/><p>I want to receive Jumia Newsletters with best deals and offers</p>
             </div>
             <button onClick={next}>CREATE ACCOUNT</button>
             <div className='already-have-acct-div'>

@@ -70,9 +70,9 @@ function Header({children}){
    
     return(
         <div className="header">
-           <div className="upper-first">
+           {/* <div className="upper-first">
 
-           </div>
+           </div> */}
            <div className="sell-and-options">
            <div className="sell-on-jumia-inner">
               <Link to="/" className="link-sell"> 
@@ -96,7 +96,7 @@ function Header({children}){
            </div>
            <div className="jumia-various-options"  >
                <div className="jumia-various-options-inner"  >
-                <h1>JUMIA</h1>
+                <h1 onClick={(()=>{navigate("/")})} className="home-jumia-onclick">JUMIA</h1>
                 <div className="search-input-div-home">
                 <BiSearchAlt2/>
                 <input  placeholder="Search products,brand and categories" type="search"/>

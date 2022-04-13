@@ -33,6 +33,8 @@
     padding-left: 0;
     width: 85%;
     margin: 0 auto;
+   
+    
 }
 .input-button-footer{
     display: flex;
@@ -74,6 +76,7 @@
 }
 .footer-category-one{
     width: 25%;
+   
 
 }
 .footer-category-three{

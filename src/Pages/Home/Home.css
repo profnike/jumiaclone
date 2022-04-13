@@ -234,16 +234,20 @@ body{
     padding-left: 30px;
     padding-right: 30px;
     color: white;
-  
+    height: 45px;
+   
 }
 .home-sellname{
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
 }
 .flash-and-image{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 70px ;
+    font-size: 18px;
     
 }
 .flash-and-image img{
@@ -278,14 +282,15 @@ body{
     height: 100%;
 }
 .list-container{
-    margin-top: 5px;
+    margin-top: 10px;
     width: 100%;
     margin-right: 8px;
     display: flex;
-   transition: all 0.3s linear;
+   /* transition: all 0.3s linear; */
     justify-content: flex-start;
     padding-right:00px;
     padding-left: 0px;
+    padding: 10px;
   
 }
 .list-container li{
@@ -298,7 +303,7 @@ body{
         transform: scale(1.005);
         box-shadow: #3A3B3C;
         box-shadow: 10px 8px 10px  rgb(0 0 0/ 10%);
-        box-shadow: 6px 6px 6px   rgb(0 0 0 / 20%);
+        box-shadow: 0px 0px 10px 10px  rgb(0 0 0 / 7%);
         
     
 }
@@ -317,7 +322,20 @@ body{
   
     
 }
-
+.seeall-and-icon-home{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+   
+}
+.right-icon-home-page{
+   font-weight: bold;
+    font-size: 18px;
+    
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
 
 
 @media  screen and (max-width:1100px) {

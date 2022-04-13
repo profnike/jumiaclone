@@ -132,7 +132,40 @@ function All(){
                </div>
                <div className="flash-categories">
                    <div className="flash-categories-left">
-                    mmm
+                    <h5>CATEGORY</h5>
+                    <p>Computing</p>
+                    <p>Electronics</p>
+                    <p>Garden & Outdoors</p>
+                    <p>Phones & Tablets</p>
+                    <p>Fashion</p>
+                    <p>Home & Office</p>
+                    <p>Grocery</p>
+                    <p>Health & Beauty</p>
+                    <h5>BRAND</h5>
+                    <input type="search"/>
+                    <div className="flash-checkbox-parag">
+                        <input type="checkbox"/>
+                        <p>8PM</p>
+                    </div>
+                   
+                    <div className="flash-checkbox-parag">
+                        <input type="checkbox"/>
+                        <p>Abena</p>
+                    </div>
+                    <div className="flash-checkbox-parag">
+                        <input type="checkbox"/>
+                        <p>Abena</p>
+                    </div>
+                    <div className="flash-checkbox-parag">
+                        <input type="checkbox"/>
+                        <p>Abena</p>
+                    </div>
+                    <div className="flash-checkbox-parag">
+                        <input type="checkbox"/>
+                        <p>Abena</p>
+                    </div>
+
+
                    </div>
                    <div className="flash-categories-right">
                        <div className="flash-categories-right-header">

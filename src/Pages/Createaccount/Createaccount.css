@@ -100,10 +100,7 @@
     justify-content: center;
     background-color: rgb(248, 214, 220);
 }
-.checkbox-and-parag p{
-    width: 40%;
-    margin-bottom: 30px;
-}
+
 .createaccount-container button{
     width: 100%;
     border: none;
@@ -114,4 +111,18 @@
     margin-bottom: 40px;
     font-size: 14px;
     font-weight: bold;
+}
+.checkbox-and-parag{
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+   
+    padding-top: 0px;
+}
+.checkbox-and-parag input{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
 }

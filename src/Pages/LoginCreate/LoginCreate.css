@@ -53,16 +53,43 @@
 .input-container input{
     border: none;
     border-bottom: 1px solid grey;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     height: 55px;
   
+}
+.input-container input:focus{
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
 }
 .remember-forgot{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+   
 }
 .forgot{
     color: orange;
+}
+.input-and-diplay-caution{
+    display: flex;
+    flex-direction: column;
+}
+.input-and-diplay-caution p{
+    color: red;
+    font-size: 13px;
+}
+.remember-checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.remember-checkbox input{
+    margin-right: 10px;
+    height: 18px;
+    width: 18px;
+}
+.input-below{
+    margin-bottom: 14px;
 }

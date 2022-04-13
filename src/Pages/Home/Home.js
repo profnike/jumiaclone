@@ -21,7 +21,7 @@ import flashallsix from '../../Asset/flash-all-six.jpg'
 import { useState } from 'react'
 import { useRef } from 'react'
 
-
+import {HiChevronRight } from "react-icons/hi";
 import "../Home/Home.css"
 import { useNavigate } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
@@ -157,8 +157,12 @@ function Home(){
                           <p>Flash Sales</p>
                       </div>
                       <p>Time left: 14h :42m :55s</p>
-                      <div>
+                      <div className='seeall-and-icon-home'>
                           <p onClick={(()=>{navigate("/Flashsales")})} className="home-sellname">SEE ALL</p>
+                          <div className='right-icon-home-page'>
+                          {/* <AiOutlineRight/> */}
+                          <HiChevronRight/>
+                          </div>
                       </div>
                   </div>
                   
