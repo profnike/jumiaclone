@@ -196,7 +196,7 @@ body{
 .cart-image-div-header{
     position: relative;
 }
-.item-count{
+.options-and-icons .item-count{
     position: absolute;
     border-radius: 100%;
     background-color: orange;

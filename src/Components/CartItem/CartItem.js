@@ -9,6 +9,8 @@ import { AiTwotoneDelete } from "react-icons/ai";
 
 const CartItem = ({item}) => {
   // const{addlocalstorage}=useContext(cartContext)
+  const{removeItem}=useContext(cartContext)
+  // const{clearallitem}=useContext(cartContext)
     const{cartItems}=useContext(cartContext)
     let value={}
     value=cartItems.find((valu)=>{
@@ -17,19 +19,7 @@ const CartItem = ({item}) => {
      )
      })
 
-     useEffect(()=>{
-      let cart = JSON.parse(localStorage.getItem('cart'));
-      if(cart!==null){
-          // cart.map((val,ind)=>{
-          //     addlocalstorage(val)
-          // })
-          
-          // // cartItems=cart
-          // console.log(cartItems)
-          // console.log(cart)
-      }
-      else{}
-  },[])
+   
   return (
     <div className='container-cart-content'>
       <div>
@@ -49,7 +39,8 @@ const CartItem = ({item}) => {
             </div>
             </div>
             <div className='lower-section-second'>
-            <div className='remove-from-cart-div'>
+            <div onClick={(()=>{removeItem(value.id)})} className='remove-from-cart-div'>
+            {/* <div onClick={(()=>{clearallitem()})} className='remove-from-cart-div'> */}
               <AiTwotoneDelete/>
                 <h5 className='remove-from-cart'>REMOVE</h5>
             </div>

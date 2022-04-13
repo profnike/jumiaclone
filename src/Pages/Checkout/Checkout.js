@@ -67,7 +67,8 @@ const Checkout = () => {
    
 
     })
-    let feetotals = 34.22+ (+totals)
+    let feetotal = 34.22+ (+totals)
+    let feetotals= feetotal.toFixed(2)
     function addfunc(){
         if((first!=="")&&(last!=="")&&(add!=="")&&(state!=="")&&(city!=="")&&(phone!=="")){
             let addr={first,last,add,state,city,phone}
@@ -84,7 +85,7 @@ const Checkout = () => {
     function delivfunc(){
         if((pick!==false)||(home!==false)){
             setdeliverycolor({backgroundColor:"green"});
-            localStorage.setItem("goods-amt", JSON.stringify(totals))
+            // localStorage.setItem("goods-amt", JSON.stringify(totals))
             setPayment(true);setDelivery(false)
         }
 
@@ -102,8 +103,8 @@ const Checkout = () => {
                          <section className='section-one'>
                         <p style={addcolor} className='circle-one'></p>
                         <div className='header-change-checkout'>
-                        <h5>1. ADDRESS DETAILS</h5>
-                        <p onClick={(()=>{setUsers(true);setAddress(true)})}>CHANGEd</p>
+                        <h5 className='excep-header'>1. ADDRESS DETAILS</h5>
+                        <p onClick={(()=>{setUsers(true);setAddress(true)})}>CHANGE</p>
                         </div>
                     </section>
                     <section className='section-two'>
@@ -117,7 +118,7 @@ const Checkout = () => {
                     (<div className='checkout-areas'>
                     <section className='section-one'>
                         <p className='circle-one'></p>
-                        <h5>1. ADDRESS DETAILS</h5>
+                        <h5 className='excep-header'>1. ADDRESS DETAILS</h5>
                     </section>
                     <section className='section-two'>
                         <div className='checkout-sectwo-input'>
@@ -160,7 +161,7 @@ const Checkout = () => {
                          <section className='section-one'>
                         <p style={addcolor} className='circle-one'></p>
                         <div className='header-change-checkout'>
-                        <h5>1. ADDRESS DETAILS</h5>
+                        <h5 className='excep-header'>1. ADDRESS DETAILS</h5>
                         <p className='change-detail' onClick={(()=>{setAddress(true);setPayment(false);setDelivery(false)})}>CHANGE</p>
                         </div>
                     </section>
@@ -181,14 +182,16 @@ const Checkout = () => {
                     (<div>
                     <section className='section-one'>
                         <p  className='circle-one'></p>
-                        <h5>2. DELIVERY METHOD</h5>
+                        <h5 className='excep-header'>2. DELIVERY METHOD</h5>
                         </section>
                        
                        
                         <section className='section-two'>
                         <h5 className='how-do-you'>How do you want your order delivered ?</h5>
                         <div className='input-div-delivery-method'>
-                        <input onClick={(()=>{setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.")})} name="delivery" type="radio" alt=""/>
+                        <input onClick={(()=>{
+                              localStorage.setItem("goods-amt", JSON.stringify(totals));
+                            setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.")})} name="delivery" type="radio" alt=""/>
                         <div>
                             <h5>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
                             <p>Ready for pickup between <span>Thursday 21 Apr</span> and  
@@ -197,7 +200,9 @@ const Checkout = () => {
                             </div>
                             </div>
                             <div className='input-div-delivery-method-next'>
-                        <input onClick={(()=>{setFeeval(true);setPick(false);setHome(true);setLocalfee("GHC 34.22"); settotalfee(`GHC  ${feetotals}`)})} name="delivery" type="radio" alt="" />
+                        <input onClick={(()=>{
+                              localStorage.setItem("goods-amt", JSON.stringify(feetotals));
+                            setFeeval(true);setPick(false);setHome(true);setLocalfee("GHC 34.22"); settotalfee(`GHC  ${feetotals}`)})} name="delivery" type="radio" alt="" />
                         <div>
                             <h5>Home & Office Delivery</h5>
                             <p> Normally delivered between <span className='span'>Thursday 21 Apr</span> and 
@@ -239,7 +244,7 @@ const Checkout = () => {
                         </div>
                        <div className='total-and-full-amount'>
                             <b><p>Total</p></b>
-                                      <h5 className='fees-h5'>{totalfee}</h5>
+                                      <h5 className='fees-h5'>  {totalfee}</h5>
                         </div>
                         </section>
                         <p className='voucher-checkout'> You will be able to add a voucher in the next step</p>
@@ -251,7 +256,7 @@ const Checkout = () => {
                             <section className='section-one'>
                         <p style={deliverycolor} className='circle-one'></p>
                         <div className='header-change-checkout'>
-                        <h5>2. DELIVERY METHOD</h5>
+                        <h5 className='excep-header'>2. DELIVERY METHOD</h5>
                         <p className='change-detail' onClick={(()=>{setDelivery(true);setPayment(false);setAddress(false)})}>CHANGE</p>
                         </div>
                         </section>
@@ -259,7 +264,7 @@ const Checkout = () => {
                             {
                                 pick===true ?(
                                     <div className='input-div-delivery-methods'>
-                                        <h5>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
+                                        <h5 className='excep-header'>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
                             <p>Ready for pickup between <span>Thursday 21 Apr</span> and  
                             <span> Wednesday 27 Apr</span> with cheaper shopping fees</p> 
 
@@ -267,7 +272,7 @@ const Checkout = () => {
                                 ):(
                                     <div className='input-div-delivery-method-nexts' >
                                         
-                                        <h5>Home & Office Delivery</h5>
+                                        <h5 className='excep-header'>Home & Office Delivery</h5>
                                        
                             <p> Normally delivered between <span className='span'>Thursday 21 Apr</span> and 
                             <span className='span'> Wednesday 27 Apr</span>. Please check exact dates at the Checkout page for 
@@ -284,7 +289,7 @@ const Checkout = () => {
                         :( <div className='header-change-checkout'>
                               <section className='section-one'>
                         <p  className='circle-one'></p>
-                        <h5>2. DELIVERY METHOD</h5>
+                        <h5 className='excep-header'>2. DELIVERY METHOD</h5>
                         </section>
                         {/* <p onClick={(()=>{setDelivery(true)})}>CHANGE</p> */}
                         </div>)}
@@ -297,7 +302,7 @@ const Checkout = () => {
                     (<div>
                     <section className='section-one'>
                         <p  className='circle-one'></p>
-                        <h5>3. PAYMENT METHOD</h5>
+                        <h5 className='excep-header'>3. PAYMENT METHOD</h5>
                         </section>
                         <section className='section-two'>
                         <h5>How do you want to pay for your order ?</h5>
@@ -325,7 +330,7 @@ const Checkout = () => {
                        
                          (<section className='section-one'>
                          <p  className='circle-one'></p>
-                        <h5>3. PAYMENT METHOD</h5>
+                        <h5 className='excep-header'>3. PAYMENT METHOD</h5>
                          </section>)}
                     </div>
                 </div>
@@ -369,7 +374,8 @@ const Checkout = () => {
                         </div>
                         {feeval ? (<div className='total-and-full-amount'>
                             <b><p>Total</p></b>
-                                      <h5 className='fees-h5'>{totalfee}</h5>
+                                      {/* <h5 className='fees-h5'>{totalfee}</h5> */}
+                                      <h5 className='fees-h5'> {totalfee}</h5>
                         </div>):""}
                         
                         <h5 className='modify-cart-checkout'>MODIFY CART</h5>

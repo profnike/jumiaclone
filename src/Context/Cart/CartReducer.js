@@ -1,4 +1,4 @@
-import {ADD_TO_CART,REMOVE_ITEM,REDUCE_ITEM,ADD_LOCAL_STORAGE} from '../Types'
+import {ADD_TO_CART,REMOVE_ITEM,REDUCE_ITEM,CLEAR_ALL_ITEM} from '../Types'
 import {addItemToCart,reduceCartitem} from '../Cart/Cart.utils'
 
 
@@ -12,6 +12,12 @@ const CartReducer= (state,action)=>{
                     
 
                 )
+
+            }
+            case CLEAR_ALL_ITEM :
+            return{
+                ...state,
+                cartItems:[]
 
             }
             case REDUCE_ITEM:

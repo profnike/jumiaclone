@@ -9,6 +9,7 @@ import Createaccount from './Pages/Createaccount/Createaccount';
 
 import LoginCreate from './Pages/LoginCreate/LoginCreate';
 import Checkout from './Pages/Checkout/Checkout';
+import Paymentsuccess from './Pages/Paymentsuccess/Paymentsuccess';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route exact path="/Createaccount" element={<Createaccount/>}/>
       <Route exact path="/customer/account/login" element={<LoginCreate/>}/>
       <Route exact path="/onepage/checkout/address" element={<Checkout/>}/>
+      <Route exact path="/successful/payment" element={<Paymentsuccess/>}/>
       </Routes>
       {/* const params=useParams()
     let current=params.id

@@ -1,9 +1,14 @@
 import React from 'react';
 import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 import { useNavigate } from 'react-router-dom';
+import cartContext from "../../Context/Cart/CartContext";
+import { useContext } from 'react';
+
 
 
 export default function App() {
+  
+  const{clearallitem}=useContext(cartContext)
   let customerDetail = JSON.parse(localStorage.getItem('addr-details'));
   let customerInfo = JSON.parse(localStorage.getItem('jumia-user'));
   let amt = JSON.parse(localStorage.getItem('goods-amt'));
@@ -41,11 +46,12 @@ export default function App() {
     callback: (response) => {
        console.log(response);
        localStorage.setItem('clientRes', JSON.stringify(response))
-      closePaymentModal() // this will close the modal programmatically
-      navigate("/Paymentsuccess")
+      // closePaymentModal() // this will close the modal programmatically
+      clearallitem()
+       navigate("/Paymentsuccess")
     },
     onClose: () => {
-        navigate("/Paymentcard")
+        navigate("/")
     },
   };
 

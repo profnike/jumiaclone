@@ -52,6 +52,8 @@
     justify-content: flex-start;
     align-items: center;
     height: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .section-one h5{
     margin-bottom: 0;
@@ -70,6 +72,7 @@
     padding-bottom: 20px;
     text-align: left;
     border-top: 1px solid rgb(209, 207, 207);
+    padding-top: 10px;
 }
 .section-two button{
     width: 100%;
@@ -420,5 +423,10 @@
     border: none;
     color: white;
     height: 45px;
+   
+}
+.excep-header{
+    font-size: 16px;
+    color: black;
    
 }
