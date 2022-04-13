@@ -403,3 +403,22 @@
     align-items: center;
     justify-content: flex-start;
 }
+.flutter-button{
+    margin: 0px 55px;
+    padding-bottom: 20px;
+}
+.change-detail{
+    color: orange;
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    
+}
+.flutter-button button{
+    width: 100%;
+    background-color: orange;
+    border: none;
+    color: white;
+    height: 45px;
+   
+}

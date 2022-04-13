@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { queryByTestId } from "@testing-library/react";
 
 function Header({children}){
+    // const{addlocalstorage}=useContext(cartContext)
     const[qty,setQty]=useState(0)
     const navigate= useNavigate()
     const {cartItems} =useContext(cartContext)
@@ -24,26 +25,36 @@ function Header({children}){
         
         
         amount+= val.quantity
-       console.log(amount)
+       
    
 
     })
     // setQty(amount)
-    console.log(amount)
+    // console.log(amount)
+    // let cart = JSON.parse(localStorage.getItem('cart'));
   useEffect(()=>{
-
-       
-         window.addEventListener('scroll',func)
-         function func(){
+    // let cart = JSON.parse(localStorage.getItem('cart'));
+    // if(cart!==null){
+    //     cart.map((val,ind)=>{
+    //         // addlocalstorage(val)
+    //     })
+        
+    //     // cartItems=cart
+    //     console.log(cartItems)
+    //     console.log(cart)
+    // }
+    // else{}
+        //  window.addEventListener('scroll',func)
+        //  function func(){
            
-             if  (window.scrollY>5){
+        //      if  (window.scrollY>5){
                     
-                    setValobj({styl:{top:0,backgroundColor:'white',maxWidth:"100%"}, valu:true})
+        //             setValobj({styl:{top:0,backgroundColor:'white',maxWidth:"100%"}, valu:true})
                     
-             }
+        //      }
       
            
-         }
+        //  }
         
   },[])
    
@@ -93,10 +104,10 @@ function Header({children}){
                 <button>SEARCH</button>
                <div className="options-and-icons"> <FaRegUser/><span>Account</span><FaChevronDown/></div>
                <div className="options-and-icons"><FiHelpCircle/><span>Help</span><FaChevronDown/></div>
-               <div className="options-and-icons" onClick={()=>{navigate("/Cart")}}><AiOutlineShoppingCart/><span>{cartItems.length > 0 && (<div className="item-count">
-                   {amount}
+               <div className="options-and-icons icon-cart-items-amount" onClick={()=>{navigate("/Cart")}}><div className="cart-image-div-header"><AiOutlineShoppingCart/></div><div>{cartItems.length > 0 && (<div className="item-count">
+                   {amount }
                    
-                   </div>)}</span><span>Cart</span></div>
+                   </div> ) }</div> <div className="cart-text">Cart</div></div>
                </div>
                </div>
                {children}

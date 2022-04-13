@@ -1,13 +1,14 @@
 import React from 'react'
 import cartContext from '../../Context/Cart/CartContext';
 import { useContext } from 'react';
+import { useEffect } from 'react';
 import '../CartItem/CartItem.css'
 import Itembutton from '../Itembutton/Itembutton';
 import { AiTwotoneDelete } from "react-icons/ai";
 
 
 const CartItem = ({item}) => {
-  
+  // const{addlocalstorage}=useContext(cartContext)
     const{cartItems}=useContext(cartContext)
     let value={}
     value=cartItems.find((valu)=>{
@@ -15,6 +16,20 @@ const CartItem = ({item}) => {
       valu.id===item.id
      )
      })
+
+     useEffect(()=>{
+      let cart = JSON.parse(localStorage.getItem('cart'));
+      if(cart!==null){
+          // cart.map((val,ind)=>{
+          //     addlocalstorage(val)
+          // })
+          
+          // // cartItems=cart
+          // console.log(cartItems)
+          // console.log(cart)
+      }
+      else{}
+  },[])
   return (
     <div className='container-cart-content'>
       <div>

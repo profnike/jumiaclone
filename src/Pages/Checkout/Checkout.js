@@ -1,7 +1,9 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import Header from '../../Components/Header/Header'
 import { useState } from 'react'
 import cartContext from '../../Context/Cart/CartContext';
+// import Flutterwave from '../../Components/Flutterwave/Flutterwave'
+import Flutterwavelink from '../../Components/Flutterwave/Flutterwave'
 import '../Checkout/Checkout.css'
 
 const Checkout = () => {
@@ -16,8 +18,45 @@ const Checkout = () => {
     const[pick, setPick]=useState(false)
     const[home, setHome]=useState(false)
     const[deliverycolor, setdeliverycolor]=useState({})
+    const[first, setFirst]=useState("")
+    const[last, setLast]=useState("")
+    const[add, setAdd]=useState("")
+    const[phone, setPhone]=useState("")
+    const[state, setState]=useState("")
+    const[city, setCity]=useState("")
+    const[users,setUsers]=useState(false)
+    const[deliverybody,setDeliverybody]=useState({})
+    let user;
+    let addretrieve;
+    useEffect(()=>{
+        user = JSON.parse(localStorage.getItem('jumia-user'));
+        addretrieve = JSON.parse(localStorage.getItem('addr-details'));
+      
+    if(user!==null){
+    setFirst(user.first)
+    setLast(user.last)
+    }
+    else{}
+    if(addretrieve!==null){
+        setUsers(true)
+        setAdd(addretrieve.add)
+        setPhone(addretrieve.phone)
+        setCity(addretrieve.city)
+        setState(addretrieve.state)
+        setLast(addretrieve.last)
+        setFirst(addretrieve.first)
+        setDelivery(true)
+        setAddress(false)
+        console.log(addretrieve)
+        setaddcolor({backgroundColor:"green"})
+    }
+    else{}
 
-    let amount= 0
+    },[])
+    
+    
+
+    // let amount= 0
     let total=0
     let totals=0
     cartItems.map((val)=>{
@@ -29,13 +68,52 @@ const Checkout = () => {
 
     })
     let feetotals = 34.22+ (+totals)
+    function addfunc(){
+        if((first!=="")&&(last!=="")&&(add!=="")&&(state!=="")&&(city!=="")&&(phone!=="")){
+            let addr={first,last,add,state,city,phone}
+            localStorage.setItem("addr-details", JSON.stringify(addr))
+              setAddress(false);
+              setaddcolor({backgroundColor:"green"})
+              setDelivery(true)
+              setUsers(true)
+        }
+        else{}
+       
+    }
+
+    function delivfunc(){
+        if((pick!==false)||(home!==false)){
+            setdeliverycolor({backgroundColor:"green"});
+            localStorage.setItem("goods-amt", JSON.stringify(totals))
+            setPayment(true);setDelivery(false)
+        }
+
+       else{} 
+
+
+    }
   return (
     <div>
         <Header>
         <div className='checkout-inner-container'>
             <div className='inner-checkout'>
                 <div className='inner-checkout-left'>
-                    {address===true?
+                    {addretrieve===null?  (<div className='checkout-areas'>
+                         <section className='section-one'>
+                        <p style={addcolor} className='circle-one'></p>
+                        <div className='header-change-checkout'>
+                        <h5>1. ADDRESS DETAILS</h5>
+                        <p onClick={(()=>{setUsers(true);setAddress(true)})}>CHANGEd</p>
+                        </div>
+                    </section>
+                    <section className='section-two'>
+                        <p>{first}  {last}</p>
+                        <p>{add},{state},{city}</p>
+                        <p>+233 {phone}</p>
+                       
+                        </section>
+                    </div>) :
+                    (address===true?
                     (<div className='checkout-areas'>
                     <section className='section-one'>
                         <p className='circle-one'></p>
@@ -45,12 +123,12 @@ const Checkout = () => {
                         <div className='checkout-sectwo-input'>
                             <div className='checkout-sectwo-input-div checkout-sectwo-input-div-left'>
                                 <p>First Name*</p>
-                            <input />
+                            <input value={first} onChange={(e)=>{setFirst(e.target.value)}} />
                             </div>
                             
                             <div className='checkout-sectwo-input-div'>
                                 <p>Last Name*</p>
-                            <input />
+                            <input value={last} onChange={(e)=>{setLast(e.target.value)}}/>
                             </div>
                         </div>
                         <div >
@@ -59,23 +137,23 @@ const Checkout = () => {
                                 <div className='mobile-code-checkout'>
                                     +233
                                 </div>
-                            <input placeholder='Enter number in format 888888888'/>
+                            <input onChange={(e)=>{setPhone(e.target.value)}} placeholder='Enter number in format 888888888'/>
                             </div>
                         </div>
                         <div className='parag-textarea'>
                             <p>Address*</p>
-                            <textarea placeholder='Street Name/Building/ Apartment No/ Floor'/>
+                            <textarea onChange={(e)=>{setAdd(e.target.value)}} placeholder='Street Name/Building/ Apartment No/ Floor'/>
                         </div>
                         <div className='parag-textarea-state'>
                             <p>State/Region*</p>
-                            <input/>
+                            <input onChange={(e)=>{setState(e.target.value)}}/>
                         </div>
                         <div className='parag-textarea-city'>
                             <p>City*</p>
-                            <input />
+                            <input onChange={(e)=>{setCity(e.target.value)}} />
                         </div>
                         <p>*Required</p>
-                        <button onClick={(()=>{setAddress(false);setaddcolor({backgroundColor:"green"})})}>SAVE AND CONTINUE</button>
+                        <button onClick={ addfunc }>SAVE AND CONTINUE</button>
                     </section>
                     </div>) :
                     (<div className='checkout-areas'>
@@ -83,16 +161,23 @@ const Checkout = () => {
                         <p style={addcolor} className='circle-one'></p>
                         <div className='header-change-checkout'>
                         <h5>1. ADDRESS DETAILS</h5>
-                        <p onClick={(()=>{setAddress(true)})}>CHANGE</p>
+                        <p className='change-detail' onClick={(()=>{setAddress(true);setPayment(false);setDelivery(false)})}>CHANGE</p>
                         </div>
                     </section>
                     <section className='section-two'>
-                        Myname is great
+                        <p>{first}  {last}</p>
+                        <p>{add},{state},{city}</p>
+                        <p>+233 {phone}</p>
+                       
                         </section>
                     </div>)
+                    )
+
+
                 }
                     <div className='checkout-areas'>
-                    {delivery===true ? 
+                        {users===true? 
+                    (delivery===true ? 
                     (<div>
                     <section className='section-one'>
                         <p  className='circle-one'></p>
@@ -159,7 +244,7 @@ const Checkout = () => {
                         </section>
                         <p className='voucher-checkout'> You will be able to add a voucher in the next step</p>
                         <div className='button-div-checkout'>
-                        <button onClick={(()=>{setdeliverycolor({backgroundColor:"green"});setDelivery(false)})} className='proceed-button-checkout'>PROCEED TO NEXT STEP</button>
+                        <button onClick={ delivfunc} className='proceed-button-checkout'>PROCEED TO NEXT STEP</button>
                         </div>
                         </div>):
                         (<div>
@@ -167,10 +252,10 @@ const Checkout = () => {
                         <p style={deliverycolor} className='circle-one'></p>
                         <div className='header-change-checkout'>
                         <h5>2. DELIVERY METHOD</h5>
-                        <p onClick={(()=>{setDelivery(true)})}>CHANGE</p>
+                        <p className='change-detail' onClick={(()=>{setDelivery(true);setPayment(false);setAddress(false)})}>CHANGE</p>
                         </div>
                         </section>
-                        <section className='section-two'>
+                        <section style={deliverybody} className='section-two'>
                             {
                                 pick===true ?(
                                     <div className='input-div-delivery-methods'>
@@ -194,13 +279,22 @@ const Checkout = () => {
                         </section>
                         
                         </div>
-                        )}
+                        ))
                         
-                        
+                        :( <div className='header-change-checkout'>
+                              <section className='section-one'>
+                        <p  className='circle-one'></p>
+                        <h5>2. DELIVERY METHOD</h5>
+                        </section>
+                        {/* <p onClick={(()=>{setDelivery(true)})}>CHANGE</p> */}
+                        </div>)}
                     
                     </div>
                    
                     <div className='checkout-areas'>
+                  {payment===true ?
+                  
+                    (<div>
                     <section className='section-one'>
                         <p  className='circle-one'></p>
                         <h5>3. PAYMENT METHOD</h5>
@@ -208,7 +302,7 @@ const Checkout = () => {
                         <section className='section-two'>
                         <h5>How do you want to pay for your order ?</h5>
                         <div className='input-text-payment-option'>
-                            <input name="payment" type="radio" alt="" checked={true}/>
+                            <input name="payment" type="radio" alt="" defaultChecked={true}/>
                             <div className='image-payment-option'>
                                 <p>Pay Now 10% off up to 20 GHS Instant Discount. Pay safe Pay Easy.</p>
                             </div>
@@ -226,7 +320,13 @@ const Checkout = () => {
                             </div>
                         </div>
                         </section>
-
+                        <div className='flutter-button'><Flutterwavelink  /></div>
+                        </div>) :
+                       
+                         (<section className='section-one'>
+                         <p  className='circle-one'></p>
+                        <h5>3. PAYMENT METHOD</h5>
+                         </section>)}
                     </div>
                 </div>
                 <div className='inner-checkout-right'>

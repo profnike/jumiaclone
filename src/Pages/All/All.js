@@ -92,6 +92,10 @@ function All(){
             
 
     ]
+    function addcart(val){
+        addToCart(val);
+        // localStorage.setItem("cart", JSON.stringify(cartItems))
+    }
     return(
         <div className="flash-container">
            <Header>
@@ -177,7 +181,12 @@ function All(){
                                
                                )
                                 
-                            :(  <button onClick={()=>addToCart(val)}>Add To Cart</button>)}
+                            :(  <button onClick={(()=>{
+                                addToCart(val);
+                                // localStorage.setItem("cart", JSON.stringify(cartItems));
+                                // console.log(cartItems)
+
+                            })}>Add To Cart</button>)}
                           
                             
                         </ul>

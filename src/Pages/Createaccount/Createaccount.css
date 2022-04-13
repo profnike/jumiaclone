@@ -8,6 +8,11 @@
     margin: 20px auto;
     text-align: left;
 }
+.createaccount-container input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+}
 .createaccount-container h5{
     color: orange;
 }

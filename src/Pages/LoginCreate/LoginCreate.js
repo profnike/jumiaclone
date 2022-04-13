@@ -7,6 +7,13 @@ import '../LoginCreate/LoginCreate.css'
 
 const LoginCreate = () => {
     const navigate=useNavigate()
+    function create(){
+        let users=JSON.parse(localStorage.getItem('jumia-user'));
+        if(users!==null){
+            navigate("/onepage/checkout/address") 
+        }
+        else{navigate("/Createaccount")}
+    }
   return (
     <div>
         <Header>
@@ -28,7 +35,7 @@ const LoginCreate = () => {
                 <p>Create your Jumia customer account in just a
                      few clicks! You can register either using your e-mail address or through
                       your Facebook account.</p>
-                      <button onClick={(()=>{navigate("/Createaccount")})}>CREATE AN ACCOUNT VIA ACCOUNT</button>
+                      <button onClick={create}>CREATE AN ACCOUNT VIA ACCOUNT</button>
             </div>
         </div>
         <Footer/>

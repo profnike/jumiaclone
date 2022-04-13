@@ -1,5 +1,6 @@
-import {ADD_TO_CART,REMOVE_ITEM,REDUCE_ITEM} from '../Types'
+import {ADD_TO_CART,REMOVE_ITEM,REDUCE_ITEM,ADD_LOCAL_STORAGE} from '../Types'
 import {addItemToCart,reduceCartitem} from '../Cart/Cart.utils'
+
 
 const CartReducer= (state,action)=>{
     switch(action.type){
@@ -53,6 +54,12 @@ const CartReducer= (state,action)=>{
                 // cartItems: [...state.cartItems,action.payload]
                 cartItems:addItemToCart(state.cartItems, action.payload)
             }
+            // case ADD_LOCAL_STORAGE:
+            // return{
+            //     ...state,
+            //      cartItems: [...state.cartItems,action.payload]
+              
+            // }
         default:
             return state
 

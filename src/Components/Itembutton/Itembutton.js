@@ -7,13 +7,19 @@ const Itembutton = ({val}) => {
   const{reduceItem}=useContext(cartContext)
     const{cartItems}=useContext(cartContext)
     
+    function addfunc(){
+      addToCart(val);
+      // localStorage.setItem("cart", JSON.stringify(cartItems))
+
+    }
+    
   return (
     
     <div className="item-present-in-cart">
                                     <p onClick={()=>reduceItem(val)} className="color-orange" >-</p>
                                     <p>{val.quantity}</p>
                                     
-                                    <p onClick={()=>addToCart(val)} className="color-orange">+</p>
+                                    <p onClick={ addfunc} className="color-orange">+</p>
                                 </div>
   )
 }
