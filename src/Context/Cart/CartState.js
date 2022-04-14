@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import CartContext from './CartContext'
 import CartReducer from './CartReducer'
 import {ADD_TO_CART,REMOVE_ITEM,REDUCE_ITEM,CLEAR_ALL_ITEM} from '../Types'
@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 //state
 let prev=JSON.parse(localStorage.getItem('cart'))
 let stated=[]
-console.log( prev)
+
 prev!==null ? (stated=prev) : stated=[]
 const CartState=({children})=>{
     const initialState={
@@ -22,7 +22,7 @@ const[state,dispatch]=useReducer(CartReducer,initialState)
 //localstotage
 useEffect(()=>[
     localStorage.setItem("cart", JSON.stringify(state)),
-    console.log(state.cartItems)
+    
     
 ])
 

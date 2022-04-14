@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
+import { BsEyeSlash } from "react-icons/bs";
+import { BsEye } from "react-icons/bs";
 import "../Createaccount/Createaccount.css"
 
 const Createaccount = () => {
@@ -9,6 +11,9 @@ const Createaccount = () => {
   const[last, setLast]=useState("")
   const[password, setPassword]=useState("")
   const[email, setEmail]=useState("")
+  const[revconc,setRevconc]=useState("password")
+    const[passimage,setPassimage]=useState({display:"none"})
+    const[textimage,setTextimage]=useState({display:"flex"})
   const navigate=useNavigate()
 
   function next(){
@@ -47,8 +52,14 @@ const Createaccount = () => {
             <div>
             <input placeholder='Last Name' type="name" onChange={(e)=>{setLast(e.target.value)}} required/>
             </div>
-            <div>
-            <input placeholder='Password' type="password" onChange={(e)=>{setPassword(e.target.value)}} required/>
+            <div className='login-password-input-div-create-account'>
+            <input placeholder='Password' type={revconc} onChange={(e)=>{setPassword(e.target.value)}} required/>
+            <div className='eye-div' style={textimage} onClick={(()=>{setRevconc("text");setPassimage({display:"flex"});setTextimage({display:"none"})})}>
+            <BsEyeSlash/>
+            </div>
+            <div className='eye-div' style={passimage} onClick={(()=>{setRevconc("password");setTextimage({display:"flex"});setPassimage({display:"none"})})}>
+            <BsEye/>
+            </div>
             </div>
             </div>
             </div>

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect,useRef} from 'react'
 import Header from '../../Components/Header/Header'
 import { useState } from 'react'
 import cartContext from '../../Context/Cart/CartContext';
@@ -25,29 +25,33 @@ const Checkout = () => {
     const[state, setState]=useState("")
     const[city, setCity]=useState("")
     const[users,setUsers]=useState(false)
-    const[deliverybody,setDeliverybody]=useState({})
-    let user;
-    let addretrieve;
+    const user=useRef()
+    const addretrieve=useRef()
+    // const[deliverybody,setDeliverybody]=useState({})
+    // let user;
+    // let addretrieve;
     useEffect(()=>{
-        user = JSON.parse(localStorage.getItem('jumia-user'));
-        addretrieve = JSON.parse(localStorage.getItem('addr-details'));
+        
+        user.current = JSON.parse(localStorage.getItem('jumia-user'));
+        addretrieve.current = JSON.parse(localStorage.getItem('addr-details'));
+       console.log(addretrieve)
       
     if(user!==null){
-    setFirst(user.first)
-    setLast(user.last)
+    setFirst(user.current.first)
+    setLast(user.current.last)
     }
     else{}
-    if(addretrieve!==null){
+    if(addretrieve.current!==null){
         setUsers(true)
-        setAdd(addretrieve.add)
-        setPhone(addretrieve.phone)
-        setCity(addretrieve.city)
-        setState(addretrieve.state)
-        setLast(addretrieve.last)
-        setFirst(addretrieve.first)
+        setAdd(addretrieve.current.add)
+        setPhone(addretrieve.current.phone)
+        setCity(addretrieve.current.city)
+        setState(addretrieve.current.state)
+        setLast(addretrieve.current.last)
+        setFirst(addretrieve.current.first)
         setDelivery(true)
         setAddress(false)
-        console.log(addretrieve)
+       
         setaddcolor({backgroundColor:"green"})
     }
     else{}
@@ -59,7 +63,7 @@ const Checkout = () => {
     // let amount= 0
     let total=0
     let totals=0
-    cartItems.map((val)=>{
+    cartItems.forEach((val)=>{
        
         let qty=val.quantity
         total+= (val.amount*qty)
@@ -85,7 +89,7 @@ const Checkout = () => {
     function delivfunc(){
         if((pick!==false)||(home!==false)){
             setdeliverycolor({backgroundColor:"green"});
-            // localStorage.setItem("goods-amt", JSON.stringify(totals))
+           
             setPayment(true);setDelivery(false)
         }
 
@@ -99,7 +103,7 @@ const Checkout = () => {
         <div className='checkout-inner-container'>
             <div className='inner-checkout'>
                 <div className='inner-checkout-left'>
-                    {addretrieve===null?  (<div className='checkout-areas'>
+                    {addretrieve.current!==null?  (<div className='checkout-areas'>
                          <section className='section-one'>
                         <p style={addcolor} className='circle-one'></p>
                         <div className='header-change-checkout'>
@@ -260,7 +264,7 @@ const Checkout = () => {
                         <p className='change-detail' onClick={(()=>{setDelivery(true);setPayment(false);setAddress(false)})}>CHANGE</p>
                         </div>
                         </section>
-                        <section style={deliverybody} className='section-two'>
+                        <section  className='section-two'>
                             {
                                 pick===true ?(
                                     <div className='input-div-delivery-methods'>
@@ -338,10 +342,10 @@ const Checkout = () => {
                     <div className='inner-checkout-right-upper'>
                         <h5>YOUR ORDER</h5>
                         <div className='cartitems-mapped-in-checkout-container'>
-                        {cartItems.map((val)=>{ 
+                        {cartItems.map((val,ind)=>{ 
                            
                             return(
-                        <div className='cartitems-mapped-in-checkout'>
+                        <div className='cartitems-mapped-in-checkout' key={ind}>
                             <div className='image-in-mapped-checkout'>
                            
                                 <img src={val.image} alt=""/>

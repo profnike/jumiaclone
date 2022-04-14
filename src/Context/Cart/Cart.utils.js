@@ -1,5 +1,5 @@
 export const addItemToCart= (cartitem, cartItemToAdd)=>{
-    console.log(cartitem)
+  
     const existingCartItem=cartitem.find((cartitems)=>{
 
         return(
@@ -31,12 +31,12 @@ export const reduceCartitem= (cartitem, cartItemToRemove)=>{
         )
     })
 
-    if (existingCartItem.quantity==1){
+    if (existingCartItem.quantity===1){
         return (
             cartitem.filter((cartItem)=>{
 
                 return(
-                cartItem.id!=cartItemToRemove.id
+                cartItem.id!==cartItemToRemove.id
                 )
             }) 
         )}
@@ -44,7 +44,7 @@ export const reduceCartitem= (cartitem, cartItemToRemove)=>{
             cartitem.map((itemcart)=>{
 
                 return(
-                itemcart.id==cartItemToRemove.id ? 
+                itemcart.id===cartItemToRemove.id ? 
                 {...itemcart,quantity:itemcart.quantity-1} : itemcart
                           )
             })

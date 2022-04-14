@@ -423,7 +423,8 @@
     border: none;
     color: white;
     height: 45px;
-   
+    font-size: 14px;
+   font-weight: bold;
 }
 .excep-header{
     font-size: 16px;

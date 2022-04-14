@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 
@@ -17,7 +17,7 @@ const Cart = () => {
     let amount= 0
     let total=0
     let totals=0
-    cartItems.map((val)=>{
+    cartItems.forEach((val)=>{
         
         
         amount+= val.quantity
@@ -25,12 +25,12 @@ const Cart = () => {
    
 
     })
-    cartItems.map((val)=>{
+    cartItems.forEach((val)=>{
         
         let qty=val.quantity
         total+= (val.amount*qty)
          totals=total.toFixed(2);
-   
+       
 
     })
    
@@ -52,9 +52,9 @@ const Cart = () => {
             <div className='cart-inner-content-left'>
             <h5 className='header'>Cart ( {amount} )</h5>
             
-            {cartItems.map((item)=>{
+            {cartItems.map((item,ind)=>{
                 return(
-                    <CartItem key={cartItems.id} item={item}/>
+                    <CartItem key={ind} item={item}/>
                 )
 
             })

@@ -13,6 +13,32 @@
     border: none;
     border-bottom: 1px solid grey;
 }
+.login-password-input-div-create-account{
+    height: 55px;
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.login-password-input-div-create-account:focus{
+    border-bottom: 1px solid grey;
+}
+.createaccount-container .login-password-input-div-create-account input{
+    outline: none;
+    border: none;
+    border-bottom:none;
+    min-width: 94%;
+    margin-bottom: 0;
+   
+}
+.login-password-input-div-create-account input:focus{
+    outline: none;
+    border: none;
+    border-bottom:none;
+}
 .createaccount-container h5{
     color: orange;
 }

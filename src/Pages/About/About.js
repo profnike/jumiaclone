@@ -3,7 +3,7 @@ import Header from "../../Components/Header/Header";
 import { GiSelfLove } from "react-icons/gi";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
-// import Itembutton from "../../Components/Itembutton/Itembutton";
+
 import { useParams } from "react-router-dom";
 import flashallone from '../../Asset/flash-all-one.jpg'
 import flashalltwo from '../../Asset/flash-all-two.jpg'
@@ -28,18 +28,9 @@ import {useContext} from 'react';
 
 function About(){
     const{addToCart}=useContext(cartContext)
-    const{cartItems}=useContext(cartContext)
+    // const{cartItems}=useContext(cartContext)
     let params=useParams()
-    console.log(params.id)
-//     let valuemap={}
-//      cartItems.map((item)=>{
-//         valuemap=cartItems.find((valu)=>{
-//             return(
-//              valu.id===item.id
-//             )
-//             })
-//      })
-//    console.log(valuemap)
+   
     
     let allItems=[
         {id:"00001",image:flashallone,name:"Xiaomi Redmi Note 10 Pro  6.67 Android 11",
@@ -89,7 +80,7 @@ function About(){
     let recent=""
     let itemLeft=""
     let value={}
-    test.map((val,id)=>{
+    test.forEach((val,id)=>{
         source=val.image
         name=val.name
         previous=val.previous
@@ -97,7 +88,7 @@ function About(){
         itemLeft=val.amtleft
         value=val
     })
-    console.log(source)
+   
     return(
         <div className="about-container">
             <Header>
@@ -141,7 +132,7 @@ function About(){
                                 </div>
                                 <p>Order above GHC 80 on Jumia Express
                                      items & get free delivery | regular delivery from GH₵ 4.02 to Tema</p>
-                                     {/* <Itembutton val={valuemap}/> */}
+                                   
                             <button onClick={()=> addToCart(value)}>ADD TO CART</button>
                             <div className="promotions-about">
                                 <h5>PROMOTIONS</h5>

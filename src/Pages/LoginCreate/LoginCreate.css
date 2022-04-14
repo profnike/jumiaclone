@@ -9,6 +9,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* background-color: aquamarine; */
+    height: 280px;
 }
 .logincreate-container button{
     width: 100%;
@@ -26,16 +28,23 @@
     width: 50%;
     text-align: left;
     padding-right: 50px;
+    /* background-color: brown; */
 }
 .login-logincreate h3{
     text-align: center;
     color: orange;
     font-size: 20px;
 }
-.signup-logincreate{
+.logincreate-container .signup-logincreate{
     width: 50%;
     text-align: left;
     padding-left: 50px;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    height: 100%;
+    
 }
 .signup-logincreate h3{
     text-align: center;
@@ -44,7 +53,8 @@
     font-size: 20px;
 }
 .signup-logincreate p{
-    margin-bottom: 100px;
+   
+    margin-bottom: auto;
 }
 .input-container{
     display: flex;
@@ -57,6 +67,28 @@
     height: 55px;
   
 }
+.login-password-input-div{
+    border: none;
+    border-bottom: 1px solid grey;
+    margin-bottom: 5px;
+    height: 55px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   
+}
+.login-password-input-div input{
+    outline: none;
+    border: none;
+    width: 95%;
+   
+}
+.input-and-diplay-caution .login-password-input-div input:focus{
+    border: none;
+    outline: none;
+    border-bottom: none;
+}
+
 .input-container input:focus{
     border: none;
     border-bottom: 1px solid grey;
@@ -71,6 +103,7 @@
 }
 .forgot{
     color: orange;
+    cursor: pointer;
 }
 .input-and-diplay-caution{
     display: flex;
@@ -92,4 +125,7 @@
 }
 .input-below{
     margin-bottom: 14px;
+}
+.eye-div{
+    cursor: pointer;
 }

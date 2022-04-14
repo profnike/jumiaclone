@@ -13,15 +13,31 @@ import goodiesfour from '../../Asset/goodies-four.jpg'
 import goodiesleft from '../../Asset/goodiesleft.jpg'
 import Carousell from '../../Components/Carousel/Carousel'
 import phoneimg from '../../Asset/phone-acc.png'
-// import Zoom from 'react-reveal/Zoom';
-// import Reveal from 'react-reveal/Reveal';
+import brandone from '../../Asset/brand-one.png'
+import brandtwo from '../../Asset/brand-two.png'
+import brandthree from '../../Asset/brand-three.png'
+import brandfour from '../../Asset/brand-four.png'
+import brandfive from '../../Asset/brand-five.png'
+import brandsix from '../../Asset/brand-six.png'
+import phoneaccessories from '../../Asset/phone-accesories.png'
+import phoneios from '../../Asset/phone-ios.png'
+import phoneyams from '../../Asset/phone-yams.png'
+import phoneand from '../../Asset/phone-and.png'
+import phonetablet from '../../Asset/phone-tablet.png'
+import phoneabrd from '../../Asset/phone-abrd.png'
+import phonebank from '../../Asset/phone-bank.jpg'
+import phonecard from '../../Asset/phone-card.jpg'
+import phonewatch from '../../Asset/phone-watch.jpg'
+import phonespeaker from '../../Asset/phone-speaker.jpg'
+import phonehead from '../../Asset/phone-head.jpg'
+import phonecase from '../../Asset/phone-case.jpg'
 import flashallone from '../../Asset/flash-all-one.jpg'
 import flashalltwo from '../../Asset/flash-all-two.jpg'
 import flashallthree from '../../Asset/flash-all-three.jpg'
 import flashallfour from '../../Asset/flash-all-four.jpg'
 import flashallfive from '../../Asset/flash-all-five.jpg'
 import flashallsix from '../../Asset/flash-all-six.jpg'
-import { useState } from 'react'
+
 import { useRef } from 'react'
 
 import {HiChevronRight } from "react-icons/hi";
@@ -49,14 +65,14 @@ function Home(){
         amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
     ]
     let brands=[
-        {image:flashallsix}, {image:flashallsix}, {image:flashallsix}, {image:flashallsix},
-         {image:flashallsix}, {image:flashallsix}
+        {image:brandone}, {image:brandtwo}, {image:brandthree}, {image:brandfour},
+         {image:brandfive}, {image:brandsix}
     ]
     let phones=[
-        {image:flashalltwo,name:"two"},{image:flashalltwo,name:"two"},{image:flashalltwo,name:"two"},
-        {image:flashalltwo,name:"two"},{image:flashalltwo,name:"two"},{image:flashalltwo,name:"two"},
-        {image:flashalltwo,name:"two"},{image:flashalltwo,name:"two"},{image:flashalltwo,name:"two"},
-        {image:flashalltwo,name:"two"},{image:flashalltwo,name:"two"},{image:flashalltwo,name:"two"}
+        {image:phoneand,name:"Android"},{image:phoneios,name:"IOS"},{image:phoneyams,name:"Yams"},
+        {image:phoneabrd,name:"From Abroad"},{image:phonetablet,name:"Tablets"},{image:phoneaccessories,name:"Tablet Accessories"},
+        {image:phonehead,name:"Headset"},{image:phonewatch,name:"Smartwatches"},{image:phonecase,name:"Phone Cases"},
+        {image:phonespeaker,name:"Portable Speakers"},{image:phonebank,name:"Power Banks"},{image:phonecard,name:"Memory Cards"}
        
        
     ]
@@ -195,7 +211,7 @@ function Home(){
                         
                         <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
                             <li><img src={val.image} alt=""/></li>
-                            <li>{val.amount}</li>
+                            <li>GHC {val.amount}</li>
                             <li className='previous-cancel-home'>{val.previous}</li>
                             <li>{val.amtleft}</li>
                         </ul>
@@ -263,7 +279,7 @@ function Home(){
                              
                              <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
                                  <li><img src={val.image} alt=""/></li>
-                                 <li>{val.amount}</li>
+                                 <li>GHC {val.amount}</li>
                                  <li className='previous-cancel-home'>{val.previous}</li>
                                  <li>{val.amtleft}</li>
                              </ul>
@@ -347,7 +363,7 @@ function Home(){
                              
                              <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
                                  <li><img src={val.image} alt=""/></li>
-                                 <li>{val.amount}</li>
+                                 <li>GHC {val.amount}</li>
                                  <li className='previous-cancel-home'>{val.previous}</li>
                                  <li>{val.amtleft}</li>
                              </ul>
