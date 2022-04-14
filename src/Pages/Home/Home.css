@@ -257,6 +257,7 @@ body{
 .items-home{
     display: flex;
     position: relative;
+    background-color: white;
 }
 .items-home ul{
     width: 100%;
@@ -291,7 +292,7 @@ body{
     padding-right:00px;
     padding-left: 0px;
     padding: 10px;
-  
+    border-radius: 5px;
 }
 .list-container li{
     margin-right: 0px;
@@ -303,7 +304,7 @@ body{
         transform: scale(1.005);
         box-shadow: #3A3B3C;
         box-shadow: 10px 8px 10px  rgb(0 0 0/ 10%);
-        box-shadow: 0px 0px 10px 10px  rgb(0 0 0 / 7%);
+        box-shadow: 0px 0px 4px 4px  rgb(0 0 0 / 7%);
         
     
 }
@@ -336,8 +337,135 @@ body{
     align-self: center;
     justify-content: center;
 }
-
-
+.third-section .goodies-header{
+    background-color: orange;
+    margin-bottom: 0;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    
+}
+.goodies-header h5{
+    align-self: center;
+}
+.third-section-image-div{
+    display: flex;
+    justify-content: space-between;
+   margin-top: 0;
+   padding: 10px;
+   background-color: white;
+   height: 280px;
+   box-shadow: 0px 0px 10px 10px  rgb(0 0 0 / 3%);
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+}
+.third-section-image-div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.third-section-image-div div {
+    width: 49.5%;
+}
+.third-section-image-div img:hover{
+    transform: scale(1.02);
+}
+.next-image-div-third-section{
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.full-image-home div{
+    width: 100%;
+    background-color: aqua;
+}
+.full-image-home img{
+    width: 100%;
+}
+.brand-div{
+    box-shadow: 0px 0px 4px 4px  rgb(0 0 0 / 7%);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+.brand-div h5{
+    font-size: 18px;
+}
+.brand-images{
+    display: flex;
+   
+}
+.brand-images img{
+    width: 100%;
+    height: 100%;
+}
+.brand-images div{
+    width: 18%;
+    margin-right: 1%;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 90px;
+}
+.brand-images div:hover{
+    transform: scale(1.03);
+}
+.smartphones-div{
+    box-shadow: 0px 0px 4px 4px  rgb(0 0 0 / 7%);
+    
+    display: grid;
+    grid-template-columns:  auto auto auto auto auto auto ;
+    background-color: blue;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+.smartphones-div img{
+    width: 100%;
+    height: 80%;
+    border:6px
+}
+.smartphones-div div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: aqua;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    height: 120px;
+    cursor: pointer;
+   
+}
+.smartphones-div div:hover{
+    transform: scale(1.02);
+}
+.foot-write-up{
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px 4px  rgb(0 0 0 / 7%);
+    padding: 15px;
+    text-align: left;
+    margin-top: 15px;
+}
+.foot-write-up h5{
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+.stay-safe-home{
+    margin-top: 10px;
+}
+.foot-write-up h6{
+    font-weight: normal;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.foot-write-up p{
+    font-size: 14px;
+}
 @media  screen and (max-width:1100px) {
     .home-top-right-area{
         display: none;

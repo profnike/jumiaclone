@@ -3,8 +3,10 @@ import Header from "../../Components/Header/Header";
 import { FcFlashOn } from "react-icons/fc";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { RiArrowRightSLine } from "react-icons/ri";
+import { BiSearchAlt2 } from "react-icons/bi";
 import banner from '../../Asset/flashsales.png'
 import { useNavigate } from "react-router-dom";
+
 // import jumiabag from '../../Asset/jumia-bag.jpg'
 import flashone from '../../Asset/flash-one.png'
 import flashtwo from '../../Asset/flash-two.png'
@@ -132,6 +134,7 @@ function All(){
                </div>
                <div className="flash-categories">
                    <div className="flash-categories-left">
+                      <div className="category-and-parag">
                     <h5>CATEGORY</h5>
                     <p>Computing</p>
                     <p>Electronics</p>
@@ -141,30 +144,140 @@ function All(){
                     <p>Home & Office</p>
                     <p>Grocery</p>
                     <p>Health & Beauty</p>
+                    </div>
+                    <div className="diff-categories">
                     <h5>BRAND</h5>
-                    <input type="search"/>
+                    <div className="search-brand">
+                        <div className="search-react-icon">
+                        <BiSearchAlt2/>
+                        </div>
+                        <input type="search" placeholder="Search" />
+                    </div>
+                    
                     <div className="flash-checkbox-parag">
-                        <input type="checkbox"/>
-                        <p>8PM</p>
+                        <input  type="checkbox"/>
+                        <p>Abena</p>
                     </div>
                    
                     <div className="flash-checkbox-parag">
-                        <input type="checkbox"/>
-                        <p>Abena</p>
+                        <input  type="checkbox"/>
+                        <p>Bebe</p>
+                    </div>
+                   <div className="flash-checkbox-parag">
+                       <input  type="checkbox"/>
+                       <p>Backpack</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>Annapurna</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>ARHANORY</p>
+                   </div>
+                   </div>
+                  
+                   <div className="diff-categories">
+                    <h5>DISCOUNT PERCENTAGE</h5>
+                    <div className="flash-checkbox-parag">
+                        <input type="radio" name="discount"/>
+                        <p>80% or more</p>
                     </div>
                     <div className="flash-checkbox-parag">
-                        <input type="checkbox"/>
-                        <p>Abena</p>
+                        <input type="radio" name="discount"/>
+                        <p>70% or more</p>
                     </div>
                     <div className="flash-checkbox-parag">
-                        <input type="checkbox"/>
-                        <p>Abena</p>
+                        <input type="radio" name="discount"/>
+                        <p>50% or more</p>
                     </div>
                     <div className="flash-checkbox-parag">
-                        <input type="checkbox"/>
-                        <p>Abena</p>
+                        <input type="radio" name="discount"/>
+                        <p>20% or more</p>
                     </div>
-
+                    <div className="flash-checkbox-parag">
+                        <input type="radio" name="discount"/>
+                        <p>10% or more</p>
+                    </div>
+                    </div>
+                    <div className="diff-categories">
+                    <h5>SIZE</h5>
+                    <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>M</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>L</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>XL</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>XXL</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>XXXL</p>
+                   </div>
+                   </div>
+                   <div className="diff-categories">
+                   <h5>GENDER</h5>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>Female</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>Male</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>Men</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>Unisex</p>
+                   </div>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>Women</p>
+                   </div>
+                   <div className="diff-categories"></div>
+                   <h5>SELLER SCORE</h5>
+                   <div className="flash-checkbox-parag">
+                        <input type="radio" name="score"/>
+                        <p>80%</p>
+                    </div>
+                    <div className="flash-checkbox-parag">
+                        <input type="radio" name="score"/>
+                        <p>60%</p>
+                    </div>
+                    <div className="flash-checkbox-parag">
+                        <input type="radio" name="score"/>
+                        <p>40%</p>
+                    </div>
+                    <div className="flash-checkbox-parag">
+                        <input type="radio" name="score"/>
+                        <p>20%</p>
+                    </div>
+                    </div>
+                    <div className="diff-categories">
+                   <h5>EXPRESS DELIVERY</h5>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>JUMIA</p>
+                   </div>
+                   </div>
+                   <div className="diff-categories">
+                   <h5>SHIPPED FROM X</h5>
+                   <div className="flash-checkbox-parag">
+                       <input type="checkbox"/>
+                       <p>Shipped from Ghana</p>
+                   </div>
+                   </div>
 
                    </div>
                    <div className="flash-categories-right">
@@ -233,12 +346,13 @@ function All(){
             </div>
             </div>
             <div className="lower-parag-flash">
-                <p>Shop Flash Sales Deals Online</p>
+                <div className="lower-parag-flash-one-upper">
+                <h5>Shop Flash Sales Deals Online</h5>
                 <p>Jumia Ghana offers you incredible deals & discounts during Flash Sales. Order online today and 
                     enjoy enjoy the fastest delivery to any address of your choice.
                 </p>
-                
-                     <p>Amazing Flash Sales Offers</p>
+                </div>
+                     <h5>Amazing Flash Sales Offers</h5>
                      <p>Explore our wide range of Flash Sale products online and order for your preferred items at the
                           lowest prices in the market. Buy 100% genuine products today and enjoy quality for less.</p>
             
