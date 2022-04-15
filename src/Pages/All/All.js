@@ -34,11 +34,11 @@ import Footer from '../../Components/Footer/Footer'
 import Itembutton from "../../Components/Itembutton/Itembutton";
 import cartContext from "../../Context/Cart/CartContext";
 import '../All/All.css'
-import CartItem from "../../Components/CartItem/CartItem";
+
 function All(){
     const{addToCart}=useContext(cartContext)
     let navigate=useNavigate()
-    let value={}
+    
     let num={}
     const{cartItems}=useContext(cartContext)
     let items=[
@@ -94,10 +94,7 @@ function All(){
             
 
     ]
-    function addcart(val){
-        addToCart(val);
-        // localStorage.setItem("cart", JSON.stringify(cartItems))
-    }
+   
     return(
         <div className="flash-container">
            <Header>

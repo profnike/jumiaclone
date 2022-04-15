@@ -210,6 +210,10 @@
     padding: 8px;
     margin-bottom: 10px;
 }
+.inner-checkout .inner-checkout-right-lower button:hover{
+    background-color: white;
+    color: orange;
+}
 .cartitems-mapped-in-checkout{
     display: flex;
     justify-content: flex-start;

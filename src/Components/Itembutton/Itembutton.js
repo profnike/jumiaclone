@@ -5,7 +5,7 @@ import cartContext from "../../Context/Cart/CartContext";
 const Itembutton = ({val}) => {
   const{addToCart}=useContext(cartContext)
   const{reduceItem}=useContext(cartContext)
-    const{cartItems}=useContext(cartContext)
+   
     
     function addfunc(){
       addToCart(val);

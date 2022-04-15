@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import '../Paymentsuccess/Payment.css'
 import {ReactComponent as Success} from '../../Asset/Success-icon.svg'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
-import cartContext from "../../Context/Cart/CartContext";
-import { useContext } from 'react';
+import {  useNavigate } from 'react-router-dom'
+
 
 const Paymentsuccess = () => {
    // const{clearallitem}=useContext(cartContext)

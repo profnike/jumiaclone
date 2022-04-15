@@ -1,7 +1,7 @@
 import React from 'react'
 import cartContext from '../../Context/Cart/CartContext';
 import { useContext } from 'react';
-import { useEffect } from 'react';
+
 import '../CartItem/CartItem.css'
 import Itembutton from '../Itembutton/Itembutton';
 import { AiTwotoneDelete } from "react-icons/ai";

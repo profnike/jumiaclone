@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
+import { FlutterWaveButton } from 'flutterwave-react-v3';
 import { useNavigate } from 'react-router-dom';
 import cartContext from "../../Context/Cart/CartContext";
 import { useContext } from 'react';
@@ -15,10 +15,10 @@ export default function App() {
   
   let email=customerInfo.email
   let phone=customerDetail.phone
-  let first=customerDetail.firstname
-  let last=customerDetail.lastname
+  let first=customerDetail.first
+  let last=customerDetail.last
   let customerName=first +" "+ last
- 
+  console.log(customerDetail)
     const navigate=useNavigate()
    const config = {
     // public_key: 'FLWPUBK-**************************-X',

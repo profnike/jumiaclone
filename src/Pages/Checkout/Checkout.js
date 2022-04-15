@@ -24,6 +24,7 @@ const Checkout = () => {
     const[phone, setPhone]=useState("")
     const[state, setState]=useState("")
     const[city, setCity]=useState("")
+    const[addret,setAddret]=useState(false)
     const[users,setUsers]=useState(false)
     const user=useRef()
     const addretrieve=useRef()
@@ -51,6 +52,7 @@ const Checkout = () => {
         setFirst(addretrieve.current.first)
         setDelivery(true)
         setAddress(false)
+        setAddret(true)
        
         setaddcolor({backgroundColor:"green"})
     }
@@ -97,18 +99,26 @@ const Checkout = () => {
 
 
     }
+    
   return (
     <div>
         <Header>
         <div className='checkout-inner-container'>
             <div className='inner-checkout'>
                 <div className='inner-checkout-left'>
-                    {addretrieve.current!==null?  (<div className='checkout-areas'>
+                    {/* addretrieve.current!==null?  (<div className='checkout-areas'>
                          <section className='section-one'>
                         <p style={addcolor} className='circle-one'></p>
                         <div className='header-change-checkout'>
                         <h5 className='excep-header'>1. ADDRESS DETAILS</h5>
-                        <p onClick={(()=>{setUsers(true);setAddress(true)})}>CHANGE</p>
+                        <p className='change-detail' onClick={(()=>{setUsers(true);
+                        setPayment(false);setDelivery(false);setAddress(true);
+                           
+                            localStorage.removeItem('addr-details');
+                            window.location.reload(false)
+                            addretrieve=null
+                            setAddress(true)
+                            })}>CHANGE</p>
                         </div>
                     </section>
                     <section className='section-two'>
@@ -117,9 +127,31 @@ const Checkout = () => {
                         <p>+233 {phone}</p>
                        
                         </section>
-                    </div>) :
-                    (address===true?
-                    (<div className='checkout-areas'>
+                    </div>) : */}
+                    {address===true?
+                    ( addret===true?  (<div className='checkout-areas'>
+                    <section className='section-one'>
+                   <p style={addcolor} className='circle-one'></p>
+                   <div className='header-change-checkout'>
+                   <h5 className='excep-header'>1. ADDRESS DETAILS</h5>
+                   <p className='change-detail' onClick={(()=>{setUsers(true);
+                   setPayment(false);setDelivery(false);setAddress(true); 
+                      
+                    //    localStorage.removeItem('addr-details');
+                    //    window.location.reload(false)
+                     
+                    //    setAddress(true)
+                       })}>CHANGE</p>
+                   </div>
+               </section>
+               <section className='section-two'>
+                   <p>{first}  {last}</p>
+                   <p>{add},{state},{city}</p>
+                   <p>+233 {phone}</p>
+                  
+                   </section>
+               </div>) :
+                    <div className='checkout-areas'>
                     <section className='section-one'>
                         <p className='circle-one'></p>
                         <h5 className='excep-header'>1. ADDRESS DETAILS</h5>
@@ -166,7 +198,7 @@ const Checkout = () => {
                         <p style={addcolor} className='circle-one'></p>
                         <div className='header-change-checkout'>
                         <h5 className='excep-header'>1. ADDRESS DETAILS</h5>
-                        <p className='change-detail' onClick={(()=>{setAddress(true);setPayment(false);setDelivery(false)})}>CHANGE</p>
+                        <p className='change-detail' onClick={(()=>{setAddret(false);setAddress(true);setPayment(false);setDelivery(false)})}>CHANGE</p>
                         </div>
                     </section>
                     <section className='section-two'>
@@ -176,12 +208,13 @@ const Checkout = () => {
                        
                         </section>
                     </div>)
-                    )
+                    }
 
 
-                }
+                
                     <div className='checkout-areas'>
                         {users===true? 
+                       
                     (delivery===true ? 
                     (<div>
                     <section className='section-one'>
@@ -195,7 +228,7 @@ const Checkout = () => {
                         <div className='input-div-delivery-method'>
                         <input onClick={(()=>{
                               localStorage.setItem("goods-amt", JSON.stringify(totals));
-                            setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.")})} name="delivery" type="radio" alt=""/>
+                            setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.")})} name="delivery" type="radio" alt="" defaultChecked={true}/>
                         <div>
                             <h5>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
                             <p>Ready for pickup between <span>Thursday 21 Apr</span> and  

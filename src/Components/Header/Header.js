@@ -11,17 +11,17 @@ import "../Header/Header.css"
 import { Link,useNavigate} from "react-router-dom";
 
 import { useEffect, useState } from "react";
-import { queryByTestId } from "@testing-library/react";
+
 
 function Header({children}){
     // const{addlocalstorage}=useContext(cartContext)
-    const[qty,setQty]=useState(0)
+    
     const navigate= useNavigate()
     const {cartItems} =useContext(cartContext)
     const [valobj,setValobj]=useState({styl:{top:"auto",backgroundColor:'white',maxWidth:"100%"}, valu:false})
    
     let amount= 0
-    cartItems.map((val)=>{
+    cartItems.forEach((val)=>{
         
         
         amount+= val.quantity
