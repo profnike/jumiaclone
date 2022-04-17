@@ -37,7 +37,7 @@ import flashallthree from '../../Asset/flash-all-three.jpg'
 import flashallfour from '../../Asset/flash-all-four.jpg'
 import flashallfive from '../../Asset/flash-all-five.jpg'
 import flashallsix from '../../Asset/flash-all-six.jpg'
-
+import Headersmall from '../../Components/Headersmall/Headersmall'
 import { useRef } from 'react'
 
 import {HiChevronRight } from "react-icons/hi";
@@ -80,7 +80,7 @@ function Home(){
   
     return(
         <div className='main-home'>
-           
+           <div className='large-screen-home'>
            
 <Header>
 
@@ -417,6 +417,111 @@ function Home(){
          
           </Header>
           <Footer/>
+          </div>
+
+          <div className='small-screen-home'>
+              <Headersmall/>
+              <div className='smallscreen-home-body'>
+              <div className='home-central-image-smallscreen'>
+                          <Carousell className="carousg"/>
+                      </div>
+                  <div className='second-sec-smallscreen-home'>
+                      <div className='img-smallscreen'>
+                      <div className='catg-and-name-smallscreen'>
+                      <div></div> 
+                      Free Delivery
+                          </div> 
+                          <div className='catg-and-name-smallscreen'>
+                      <div></div> 
+                      Official Stores
+                          </div>
+                          <div className='catg-and-name-smallscreen'>
+                      <div></div> 
+                      Easter Fest
+                          </div>
+                          <div className='catg-and-name-smallscreen'>
+                      <div></div> 
+                      Call to Order
+                          </div>
+                      </div>
+                      <div className='img-smallscreen'>
+                      <div className='catg-and-name-smallscreen'>
+                      <div></div> 
+                      Jumia Global
+                          </div> 
+                          <div className='catg-and-name-smallscreen'>
+                      <div></div> 
+                      Fashion
+                          </div>
+                          <div className='catg-and-name-smallscreen'>
+                      <div></div> 
+                      Jumia Food
+                          </div>
+                          <div className='catg-and-name-smallscreen'>
+                      <div></div> 
+                      Flash Sales
+                          </div>
+                      </div>
+                  </div>
+                  <div className='second-body-div'>
+                  <div className='second-body-div-header'>
+                  <div className='flash-and-time-smallscreen'>
+                  <img src={supers} alt=""/>
+                      <div className='flashsales-and-image'>
+                         
+                     
+                          <p>Flash Sales</p>
+                          <p>Time left: 14h :42m :55s</p>
+                      </div>
+                     
+                      </div>
+                      <div className='seeall-and-icon-home'>
+                          <p onClick={(()=>{navigate("/Flashsales")})} className="home-sellname">SEE ALL</p>
+                          <div className='right-icon-home-page'>
+                          {/* <AiOutlineRight/> */}
+                          <HiChevronRight/>
+                          </div>
+                      </div>
+                  </div>
+                 
+             <div className='items-home'>
+                 
+          
+                     
+                
+                 {   items.filter((val,indx)=>{
+                     return(indx<6)
+                 })
+                     .map((val,ind)=>{
+                         // ind<2
+                         return(
+                             
+                            //  <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
+                            <ul  ref={myRef} className='list-container'  key={ind}>
+                                 <li><img src={val.image} alt=""/></li>
+                                 <li>GHC {val.amount}</li>
+                                 <li className='previous-cancel-home'>{val.previous}</li>
+                                 <li>{val.amtleft}</li>
+                             </ul>
+                             
+                         )
+     
+     
+                     })
+                 }
+                 
+               
+                 
+                 
+                       </div>
+            
+                 </div>
+
+
+
+              </div>
+
+          </div>
         </div>
 
     )

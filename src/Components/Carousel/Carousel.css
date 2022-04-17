@@ -9,3 +9,10 @@
 .carousel-items ol li{
     border-radius: 100% !important;
 }
+@media screen and (max-width:1000px) {
+    .carousel-div img  {
+        height: 200px !important;
+        z-index: 1 !important;
+      
+    }
+}

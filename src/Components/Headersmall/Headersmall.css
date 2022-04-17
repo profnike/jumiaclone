@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header-main-div{
+    background-color: blue;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    height: 17vh;
+    z-index: 1000;
+}
+
+.upper-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    width: 100%;
+   margin-bottom: 10px;
+}
+.header-corners{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.header-corners h5{
+    font-size: 17px;
+    margin-bottom: 0;
+}
+.acc-icon-small-header{
+    margin-right: 10px;
+}
+.hamb-icon-small-header{
+    margin-right: 10px;
+}
+.icon-input-small-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-radius: 34px;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: rgb(111, 134, 111);
+}
+.icon-input-small-header input{
+    outline: none;
+    border: none;
+    min-width: 85%;
+    max-width: 90%;
+}
+.cart-and-number-smallheader{
+    display: flex;
+    position: relative;
+}
+.number-small-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    color: white;
+    border-radius: 100%;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+   margin-left: 25px;
+   margin-top:5px;
+}
+.search-icon-smallheader{
+    font-size: 25px;
+    margin-right: 1%;
+}
+.icon-smallheader{
+    font-size: 22px;
+    margin-left: 15px;
+}

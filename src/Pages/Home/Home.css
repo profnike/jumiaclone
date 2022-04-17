@@ -466,6 +466,12 @@ body{
 .foot-write-up p{
     font-size: 14px;
 }
+.large-screen-home{
+    display:inline;
+}
+.small-screen-home{
+    display: none;
+}
 @media  screen and (max-width:1100px) {
     .home-top-right-area{
         display: none;
@@ -484,5 +490,95 @@ body{
     }
     .home-central-image{
         min-width: 75%;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .large-screen-home{
+        display: none;
+    }
+    .small-screen-home{
+        display: inline;
+        background-color: blueviolet;
+        height: 100vh;
+    }
+    .smallscreen-home-body{
+        padding-top: 18vh;
+        background-color: red;
+        /* height: 80vh; */
+       
+    }
+    .home-central-image-smallscreen{
+        margin: 0px 10px;
+        
+    }
+    .second-sec-smallscreen-home{
+        margin-top: 15px;
+        padding: 10px 10px;
+        margin-bottom: 0;
+        padding-top: 5px;
+        background-color: blue;
+    }
+    .img-smallscreen{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .catg-and-name-smallscreen{
+        display: flex;
+        flex-direction: column;
+        font-size: 0.7rem;
+    }
+    .catg-and-name-smallscreen div{
+        border-radius: 100%;
+        width: 4rem;
+        height: 4rem;
+        background-color: aqua;
+        margin-right: 0.3rem;
+    }
+    .items-home{
+        background-color: blueviolet;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .small-screen-home .items-home ul{
+        min-width: 32%;
+        background-color: brown;
+    }
+    .flash-and-time-smallscreen{
+        display: flex;
+        
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 0px;
+        background-color: bisque;
+        height: 100%;
+    }
+    .second-body-div-header{
+        padding: 10px;
+        align-items: center;
+        background-color: aqua;
+        height: 65px;
+        margin-top: 0px;
+    }
+    .flash-and-image{
+        margin: 0px;
+    }
+    .flashsales-and-image{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .flash-and-time-smallscreen img{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .second-body-div{
+        margin-top: 0px;
+        
     }
 }

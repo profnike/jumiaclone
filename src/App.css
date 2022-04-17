@@ -41,7 +41,7 @@ p{margin-bottom: 0;}
     transform: rotate(360deg);
   }
 }
-@media screen and (max-width:1300px) {
+@media (min-width:1000px) and (max-width:1300px) {
   .App{
     width: fit-content;
   }

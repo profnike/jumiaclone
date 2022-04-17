@@ -8,7 +8,9 @@ body{
    
     /* width: fit-content */
   min-width: auto;
-  
+  /* max-width: 100%;
+   min-width: 100%;
+   overflow: hidden; */
   /* max-width: 100%; */
   /* overflow-x: scroll; */
   /* overflow: hidden;
