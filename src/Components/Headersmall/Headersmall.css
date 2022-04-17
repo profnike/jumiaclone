@@ -4,19 +4,20 @@
     box-sizing: border-box;
 }
 .header-main-div{
-    background-color: blue;
+    background-color: white;
     width: 100%;
     padding: 10px;
     position: fixed;
-    height: 17vh;
+    height: 110px;
     z-index: 1000;
+  
 }
 
 .upper-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aqua;
+   
     width: 100%;
    margin-bottom: 10px;
 }
@@ -24,10 +25,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+   
 }
-.header-corners h5{
-    font-size: 17px;
+.header-corners p{
+    font-size: 19px;
     margin-bottom: 0;
+    margin-top: 0;
+    align-self:flex-end;
 }
 .acc-icon-small-header{
     margin-right: 10px;
@@ -42,8 +46,9 @@
     width: 100%;
     border-radius: 34px;
     padding: 5px;
+    height: 35px;
     padding-left: 10px;
-    background-color: rgb(111, 134, 111);
+   border: 1px solid grey;
 }
 .icon-input-small-header input{
     outline: none;

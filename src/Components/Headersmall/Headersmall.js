@@ -3,17 +3,32 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaRegUser } from "react-icons/fa";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import '../Headersmall/Headersmall.css'
+import cartContext from "../../Context/Cart/CartContext";
+import { useContext } from "react";
+import "../Headersmall/Headersmall.css"
+import { useNavigate} from "react-router-dom";
+
 
 
 const Headersmall = () => {
+    const navigate= useNavigate()
+    const {cartItems} =useContext(cartContext)
+    let amount= 0
+    cartItems.forEach((val)=>{
+        
+        
+        amount+= val.quantity
+       
+   
+
+    })
   return ( 
   
     <div className='header-main-div'>
         <div className='upper-header'>
         <div className='header-corners'>
             <div className='hamb-icon-small-header icon-smallheader'><GiHamburgerMenu/></div>
-            <h5>JUMIA</h5>
+            <p>JUMIA</p>
         </div>
 
         <div  className='header-corners'>
@@ -22,7 +37,10 @@ const Headersmall = () => {
                 <div className='icon-smallheader'>
             <AiOutlineShoppingCart/>
             </div>
-            <div className='number-small-header'>1</div>
+            <div onClick={()=>{navigate("/Cart")}} className='number-small-header'>{cartItems.length > 0 && amount  }</div>
+                
+                   
+              
             </div>
         </div>
 
@@ -32,7 +50,7 @@ const Headersmall = () => {
             <div className='search-icon-smallheader'>
                 < BiSearchAlt2/>
                 </div> 
-         <input placeholder='Search'/>
+         <input placeholder='Search products, brands and categories'/>
         
         </div>
         </div>

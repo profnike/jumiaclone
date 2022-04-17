@@ -499,17 +499,19 @@ body{
     }
     .small-screen-home{
         display: inline;
-        background-color: blueviolet;
+       
         height: 100vh;
     }
     .smallscreen-home-body{
-        padding-top: 18vh;
-        background-color: red;
-        /* height: 80vh; */
+       
+        padding-top: 110px;
+      background-color:
+rgba(40, 40, 40,10%);
+       
        
     }
     .home-central-image-smallscreen{
-        margin: 0px 10px;
+        margin: 0px 0px;
         
     }
     .second-sec-smallscreen-home{
@@ -517,7 +519,7 @@ body{
         padding: 10px 10px;
         margin-bottom: 0;
         padding-top: 5px;
-        background-color: blue;
+        background-color: white;
     }
     .img-smallscreen{
         display: flex;
@@ -534,17 +536,29 @@ body{
         border-radius: 100%;
         width: 4rem;
         height: 4rem;
-        background-color: aqua;
+        
         margin-right: 0.3rem;
     }
+    .catg-and-name-smallscreen div img{
+        width: 100%;
+        height: 100%;
+    }
     .items-home{
-        background-color: blueviolet;
+       
         width: 100%;
         overflow-x: scroll;
+        padding-bottom: 20px;
     }
     .small-screen-home .items-home ul{
         min-width: 32%;
-        background-color: brown;
+        
+        overflow-x: hidden;
+      
+    }
+    .name-homelist-smallscreen{
+       
+        height: 18px;
+        overflow: hidden;
     }
     .flash-and-time-smallscreen{
         display: flex;
@@ -553,13 +567,17 @@ body{
         justify-content: flex-start;
         margin: 0;
         padding: 0px;
-        background-color: bisque;
+       
         height: 100%;
+    }
+    .clearance-header-smallscreen{
+        background-color: orange;
+        color: black;
     }
     .second-body-div-header{
         padding: 10px;
         align-items: center;
-        background-color: aqua;
+        
         height: 65px;
         margin-top: 0px;
     }
@@ -580,5 +598,82 @@ body{
     .second-body-div{
         margin-top: 0px;
         
+    }
+    .third-section-image-div{
+        height: 150px;
+        margin-bottom: 0px;
+    }
+    .next-image-div-third-section{
+        margin-top: 10px;
+    }
+    .clerance-smallscreen{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-right: 15px;
+        padding-top: 10px;
+    }
+     .small-screen-home .clerance-smallscreen ul{
+        margin-right: 10px;
+        justify-content: space-between;
+      border-radius: 0px;
+       margin-bottom: 0px;
+       margin-top: 0px;
+      
+    }
+    /* .items-home .clearance-amt-smallscreen-center{
+        text-align: center;
+        align-self: center;
+        margin: 0 auto;
+        margin: 0;
+    } */
+    .brand-smaller-screen{
+        display: grid;
+        grid-template-columns:  33% 33% 33%;
+        
+    }
+    .brand-div{
+        background-color: white;
+    }
+    .brand-smaller-screen div{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .brand-div{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .smartphones-div{
+        display: grid;
+        grid-template-columns:  25% 25% 25% 25%;
+    }
+    .smartphones-div div{
+        height: 100px;
+        background-color: beige;
+        font-size: 0.7rem;
+        margin-top: 10px;
+    }
+    .smartphones-div img{
+        min-height: 80%;
+        max-height: 80%;
+    }
+    .foot-write-up{
+        padding: 10x;
+        width: 100%;
+        background-color: white;
+      
+    }
+   
+    .foot-write-up button{
+        width: 100%;
+        border: none;
+        outline: none;
+        color: orange;
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        background-color: inherit;
     }
 }
