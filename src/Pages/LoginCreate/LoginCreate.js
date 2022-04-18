@@ -35,6 +35,7 @@ const LoginCreate = () => {
     }
   return (
     <div>
+        <div className='largerscreen-logincreate'>
         <Header>
         
         
@@ -85,6 +86,11 @@ const LoginCreate = () => {
         </div>
         <Footer/>
         </Header>
+        </div>
+        <div className='smallscreen-logincreate'>
+
+            
+        </div>
     </div>
   )
 }

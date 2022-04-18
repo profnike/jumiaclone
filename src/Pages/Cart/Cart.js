@@ -7,6 +7,8 @@ import cartContext from '../../Context/Cart/CartContext';
 import CartItem from '../../Components/CartItem/CartItem';
 import './Cart.css'
 import { useNavigate } from 'react-router-dom';
+import Footersmall from '../../Components/Footersmall/Footersmall';
+import Headersmall from '../../Components/Headersmall/Headersmall';
 
 
 const Cart = () => {
@@ -36,6 +38,7 @@ const Cart = () => {
    
   return (
     <div className='cart-container'>
+        <div className='large-screen-cart'>
         <Header>
     
         { cartItems.length === 0 ?
@@ -76,6 +79,43 @@ const Cart = () => {
 
         </Header>
         <Footer/>
+        </div>
+        <div className='small-screen-cart'>
+        <Headersmall/>
+        <div className='cart-inner-smallscreen'>
+        { cartItems.length === 0 ?
+        (
+            <div className='cart-inner'>
+            <div className='cart-image-wrapper'>
+        <MdShoppingCart/>
+        </div>
+      <h5>Your cart is empty! </h5>
+        <p>Browse our categories and discover our best deals!</p>
+        <button onClick={()=>{navigate("/")}}>START SHOPPING</button>
+        </div>):
+              (<div>
+              <h5 className='cart-summary-head-smallerscreen'>CART SUMMARY</h5>
+            <div className='cart-summary-body smallscreen-cartsummary'>
+            <h5>Subtotal</h5>
+            <h2>GHC {totals}</h2>
+        </div>
+        <h5 className='smallscreen-cartnum-header'>Cart ( {amount} )</h5>
+
+       {cartItems.map((item,ind)=>{
+                return(
+                    <CartItem key={ind} item={item}/>
+                )
+
+            })}
+            
+       
+        <button  onClick={(()=>{navigate("/customer/account/login")})}>CHECKOUT GHC {totals}</button>
+        </div>)}
+        </div>
+
+        <Footersmall/>
+
+        </div>
     </div>
   )
 }

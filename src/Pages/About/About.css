@@ -9,9 +9,9 @@
 rgba(40, 40, 40,10%);
 
 };
-.about-inner{
+/* .about-inner{
    
-}
+} */
 .about-section-one{
   
     display: flex;
@@ -164,4 +164,67 @@ rgba(40, 40, 40,10%);
     cursor: pointer;
     border: 1px solid black;
     border-radius: 100%;
+}
+.about-smaller-screen{
+    display: none;
+}
+.about-larger-screen{
+    display: inline;
+}
+@media screen and (max-width:1000px) {
+    .about-smaller-screen{
+        display: inline;
+    }
+    .about-larger-screen{
+        display: none;
+    }
+    .about-body-smallerscreen{
+        padding-top: 110px;
+    }
+    .about-image-container{
+        width: 100%;
+        padding: 0px;
+        border: none;
+        margin-top: 15px;
+        background-color: bisque;
+    }
+    .about-image-container img{
+        width: 100%;
+        height: 100%;
+    }
+    .flash-about-cont-smallscreen{
+        background-color: white;
+        text-align: left;
+        padding: 10px;
+    }
+    .promotions-about{
+        border: none;
+        margin-top: 10px;
+        padding-top: 0;
+       text-align: left;
+       
+    }
+    .promotion-smallscreen p{
+        font-size: 1rem;
+    }
+    .report-smallscreen{
+        background-color: white;
+        text-align: left;
+        height: 35px;
+        margin-top: 10px;
+        color: rgb(5, 5, 88);
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+    .about-addcart-smallscreen{
+        width: 100%;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        background-color: orange;
+        color: white;
+        height: 40px;
+    }
+    
 }

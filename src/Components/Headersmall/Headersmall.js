@@ -34,10 +34,12 @@ const Headersmall = () => {
         <div  className='header-corners'>
             <div className='acc-icon-small-header icon-smallheader'><FaRegUser/></div>
             <div className='cart-and-number-smallheader'>
-                <div className='icon-smallheader'>
+                {/* <div className='icon-smallheader'>
             <AiOutlineShoppingCart/>
-            </div>
-            <div onClick={()=>{navigate("/Cart")}} className='number-small-header'>{cartItems.length > 0 && amount  }</div>
+            </div> */}
+            <div onClick={()=>{navigate("/Cart")}} ><div className='icon-smallheader'><AiOutlineShoppingCart/> </div>
+            
+           {cartItems.length > 0 &&<div className='number-small-header'> {amount} </div> }</div>
                 
                    
               

@@ -31,9 +31,15 @@ const CartItem = ({item}) => {
             <div className='lower-section-cart-imageamount'>
             <div className='lower-section-cart-imageamount-left'>
                 <img src={item.image} alt=""/>
+                <div className='flex-name-amount-smallscreen'>
                 {item.name}
+                <div className='show-smallscreen-cartitem'>
+                <p >GHC {item.amount}</p>
+                <p className='prev-cart-smallscreen'>{item.previous}</p>
+                </div>
+                </div>
             </div>
-            <div>
+            <div className='hidden-smallscreen-cartitem'>
                 <div>{item.amount}</div>
                 <div className='previous-amt-cart'>{item.previous}</div>
             </div>

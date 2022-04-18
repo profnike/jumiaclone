@@ -25,6 +25,8 @@ import '../About/About.css'
 import Footer from "../../Components/Footer/Footer";
 import cartContext from "../../Context/Cart/CartContext";
 import {useContext} from 'react';
+import Headersmall from "../../Components/Headersmall/Headersmall";
+import Footersmall from "../../Components/Footersmall/Footersmall";
 
 function About(){
     const{addToCart}=useContext(cartContext)
@@ -91,6 +93,7 @@ function About(){
    
     return(
         <div className="about-container">
+            <div className="about-larger-screen">
             <Header>
                 <div className="about-inner">
                     <div className="about-section-one">
@@ -156,6 +159,48 @@ function About(){
 
             </Header>
             <Footer/>
+            </div>
+            <div className="about-smaller-screen">
+                <Headersmall/>
+               <div className="about-body-smallerscreen">
+               <div className="about-image-container"><img src={source} alt=""/></div>
+              
+               <div className="flash-about-cont-smallscreen">
+               <h5>{name}</h5>
+               <div className="flash-about">
+                                    <div className="flash-about-header">
+                                        <div className="flashandimage-about-header">
+                                        <h5>FLASH SALES</h5>
+                                        </div>
+                                        <p>Time left:18h : 14m : 26s</p>
+                                    </div>
+                                    <div className="flash-about-body">
+                                       <p className="recent-flash-about">GHC {recent}</p> 
+                                    <p className="previous-flash-about">{previous}</p>
+                                    <p>{itemLeft}</p>
+
+                                    </div>
+
+                                </div>
+                                <p>Order above GHC 80 on Jumia Express
+                                     items & get free delivery | regular delivery from GH₵ 4.02 to Tema</p>
+                                   
+                                </div>
+                              
+                                <div className="promotions-about">
+                                <h5>PROMOTIONS</h5>
+                                <div className="flash-about-cont-smallscreen promotion-smallscreen">
+                                <p>Enjoy 5% instant cashback on airtime & data on JumiaPay. Use code:MOBS</p>
+                                <p>Enjoy cheaper delivery fees when you select a pickup station at checkout</p>
+                                <p >Free delivery in Accra and Kumasi for orders above GHC80(Excluding Large)</p>
+                            </div>
+                            </div>
+                            <p className="report-smallscreen">Report incorrect product information</p>
+                            <button className="about-addcart-smallscreen" onClick={()=> addToCart(value)}>ADD TO CART</button>
+               </div>
+                <Footersmall/>
+
+            </div>
         </div>
     )
 }
