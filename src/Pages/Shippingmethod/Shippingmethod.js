@@ -470,7 +470,13 @@ const Shippingmethod = () => {
                         <div className='input-div-delivery-method'>
                         <input onClick={(()=>{
                               localStorage.setItem("goods-amt", JSON.stringify(totals));
-                            setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.")})} name="delivery" type="radio" alt="" defaultChecked={true}/>
+                            setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.");
+                            localStorage.setItem("localfee", JSON.stringify("N.A."));
+                            localStorage.setItem("totalfee", JSON.stringify("N.A."));
+                        })} name="delivery" type="radio" alt=""
+                            defaultChecked={true}/> 
+                           
+                           
                         <div>
                             <h5>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
                             <p>Ready for pickup between <span>Thursday 21 Apr</span> and  
@@ -481,7 +487,10 @@ const Shippingmethod = () => {
                             <div className='input-div-delivery-method-next'>
                         <input onClick={(()=>{
                               localStorage.setItem("goods-amt", JSON.stringify(feetotals));
-                            setFeeval(true);setPick(false);setHome(true);setLocalfee("GHC 34.22"); settotalfee(`GHC  ${feetotals}`)})} name="delivery" type="radio" alt="" />
+                              localStorage.setItem("localfee", JSON.stringify("GHC 34.22"));
+                            
+                            setFeeval(true);setPick(false);setHome(true);setLocalfee("GHC 34.22"); settotalfee(`GHC  ${feetotals}`);
+                            localStorage.setItem("totalfee", JSON.stringify(`GHC  ${feetotals}`));})} name="delivery" type="radio" alt="" />
                         <div>
                             <h5>Home & Office Delivery</h5>
                             <p> Normally delivered between <span className='span'>Thursday 21 Apr</span> and 

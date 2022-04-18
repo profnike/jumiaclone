@@ -29,12 +29,17 @@ const Itempayment = () => {
     const[users,setUsers]=useState(false)
     const user=useRef()
     const addretrieve=useRef()
+    const localfeeretrieve=useRef()
+    const totalfeeretrieve=useRef()
+    const goodamtretrieve=useRef()
     const navigate=useNavigate()
     // const[deliverybody,setDeliverybody]=useState({})
     // let user;
     // let addretrieve;
     useEffect(()=>{
-        
+        localfeeretrieve.current=JSON.parse(localStorage.getItem('localfee'));
+        totalfeeretrieve.current=JSON.parse(localStorage.getItem('totalfee'));
+        goodamtretrieve.current=JSON.parse(localStorage.getItem('goods-amt'));
         user.current = JSON.parse(localStorage.getItem('jumia-user'));
         addretrieve.current = JSON.parse(localStorage.getItem('addr-details'));
        console.log(addretrieve)
@@ -438,7 +443,7 @@ const Itempayment = () => {
         </div>
       </Header>
     </div>
-    <div className='smallscreen-shippingmethod'>
+    <div className='smallscreen-shippingmethod smallerscreen-payment'>
         <div className='inner-small-shippingmethod'>
         <div className='first-section-shippingmethod'>
             <div className='topheading-shippingmethod'>
@@ -455,65 +460,48 @@ const Itempayment = () => {
         </div>
         
         <div className='add-and-change-shippingmethod'>
-            <h5>YOUR ADDRESS</h5>
-            <h4  onClick={(()=>{navigate("/checkout/multistep/shipping")})}>CHANGE ADDRESS</h4>
+            <h5>SELECT A PAYMENT METHOD</h5>
         </div>
-        <section className='section-twos-shippingmethod'>
-                        <p>{first}  {last}</p>
-                        <p>{add}</p>
-                        <p>{state}-{city}</p>
-                        <p>+233 {phone}</p>
+        <div className='input-text-payment-option'>
+                            <input name="payment" type="radio" alt=""/>
+                            <div className='image-payment-option'>
+                            <p>Jumia Sales Agent.</p>
+                            </div>
+                        </div>
+                        <div className='input-text-payment-option'>
+                            <input name="payment" type="radio" alt=""/>
+                            <div className='image-payment-option'>
+                            <p>Jumia Sales Agent.</p>
+                            </div>
+                        </div>
+                        <div className='input-text-payment-option'>
+                            <input name="payment" type="radio" alt=""/>
+                            <div className='image-payment-option'>
+                            <p>Bank Deposit/Transfer </p>
+                            </div>
+                        </div>
                        
-                        </section>
-                        <h5 className='select-shippingmethod'>SELECT A DELIVERY METHOD</h5>
-                        <div className='delivrymethod-shippingmethod'>
-                        <div className='input-div-delivery-method'>
-                        <input onClick={(()=>{
-                              localStorage.setItem("goods-amt", JSON.stringify(totals));
-                            setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.")})} name="delivery" type="radio" alt="" defaultChecked={true}/>
-                        <div>
-                            <h5>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
-                            <p>Ready for pickup between <span>Thursday 21 Apr</span> and  
-                            <span> Wednesday 27 Apr</span> with cheaper shopping fees</p> 
-                            <h4 className='pick-up-checkout'>SELECT PICKUP STATION</h4>
-                            </div>
-                            </div>
-                            <div className='input-div-delivery-method-next'>
-                        <input onClick={(()=>{
-                              localStorage.setItem("goods-amt", JSON.stringify(feetotals));
-                            setFeeval(true);setPick(false);setHome(true);setLocalfee("GHC 34.22"); settotalfee(`GHC  ${feetotals}`)})} name="delivery" type="radio" alt="" />
-                        <div>
-                            <h5>Home & Office Delivery</h5>
-                            <p> Normally delivered between <span className='span'>Thursday 21 Apr</span> and 
-                            <span className='span'> Wednesday 27 Apr</span>. Please check exact dates at the Checkout page for 
-                            <span id='amount-for-in-checkout'> GHC 34.22 </span></p>
-                            <div className='note-in-checkout'> 
-                            *Living in Greater Accra <span>JUMIA PRIME </span> Members enjoy Free Delivery on all Jumia Local Items 
-                            (excluding bulky items) and Jumia Food Orders
-
-
-                        <p className='note-and-column'>Note:</p>
-                       <p> *Items may be shipped and attempted SEPARATELY for deliveries as they become 
-                        available.
-                        </p>
-
-                        <p>
-                        *Please make sure you entered your home address with the full necessary 
-                        details so that you may stay safe and expect delivery at your doorstep.
-                        </p>
-
-                            </div>
-                        </div>
-                        </div>
-                        </div>
+                                <h5 className='voucher-paymentstyle'>YOU HAVE A VOUCHER?</h5>
+                                <div className='voucher-and-botton-payment'>
+                                    <input placeholder='Enter voucher code here'/><button>USE</button>
+                                </div>
                         <div className='lower-firstsection-shippingmethod'>
                         <div className='subtotal-amt-checkout'>
                             <div>
                             <p>Subtotal</p>
                             <p>GHC {totals}</p>
                             </div>
+                            <div className='local-fee-amount-shipping-method'>
+                                      <p>Local Delivery Fees</p>
+                                      <h5 className='fees-h5'>{localfeeretrieve.current}</h5>
+                                  </div>
+                                  <div className='total-and-full-amount'>
+                            <b><p>Total</p></b>
+                                      {/* <h5 className='fees-h5'>{totalfee}</h5> */}
+                                      <h5 className='fees-h5'> {totalfeeretrieve.current}</h5>
+                        </div>
                             
-                                {
+                                 {
                                   feeval ? (<div className='local-fee-amount-shipping-method'>
                                       <p>Local Delivery Fees</p>
                                       <h5 className='fees-h5'>{localfee}</h5>
@@ -526,9 +514,9 @@ const Itempayment = () => {
                         {feeval ? (<div className='total-and-full-amount'>
                             <b><p>Total</p></b>
                                       {/* <h5 className='fees-h5'>{totalfee}</h5> */}
-                                      <h5 className='fees-h5'> {totalfee}</h5>
-                        </div>):""}
-                        <p className='voucher-checkout'> You will be able to add a voucher in the next step</p>
+                                      <h5 className='fees-h5'> {totalfeeretrieve.current}</h5>
+                        </div>):""} 
+                       
                         <button onClick={nextfunc}>NEXT</button>
                         <h5 className='modify-cart-checkout'>MODIFY CART</h5>
                         </div>

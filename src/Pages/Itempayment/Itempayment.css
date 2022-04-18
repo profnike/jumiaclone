@@ -3,3 +3,54 @@
     margin: 0;
     box-sizing: border-box;
 }
+.voucher-paymentstyle{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.voucher-and-botton-payment{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.voucher-and-botton-payment button{
+    background-color: orange;
+    color: white;
+    border: none;
+    height: 30px;
+    padding: 5px;
+    width: 10%;
+    font-size: 10px;
+}
+.voucher-and-botton-payment input{
+    width: 85%;
+    height: 30px;
+    margin-left: 5px;
+    padding: 5px;
+}
+.smallerscreen-payment .input-text-payment-option{
+    background-color: white;
+    margin-top: 10px;
+    height: 60px;
+    padding-left: 10px;
+
+}
+.smallerscreen-payment .subtotal-amt-checkout{
+    border-bottom: none;
+    
+}
+.smallerscreen-payment .total-and-full-amount{
+   margin-bottom: 0;
+   
+   padding: 0;
+   padding-top: 10px;
+
+   border-top: 0.5px solid gray;
+  border-width: 0.3px;
+    
+}
+.smallerscreen-payment button{
+    margin-top: 0;
+}
