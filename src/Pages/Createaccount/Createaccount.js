@@ -21,10 +21,9 @@ const Createaccount = () => {
     if( (email!=="")&&(password!=="")&&(last!=="")&&(first!=="")){
       let user={email,password,last,first}
       localStorage.setItem("jumia-user", JSON.stringify(user))
+      localStorage.removeItem('addr-details')
       navigate("/onepage/checkout/address")
-      // if((localStorage.getItem("user")==null)){
-      //   localStorage.setItem("user", JSON.stringify(user))}
-      //   else{ localStorage.setItem("user", JSON.stringify(user))}
+      
        
       
 
@@ -79,7 +78,7 @@ const Createaccount = () => {
             <button onClick={next}>CREATE ACCOUNT</button>
             <div className='already-have-acct-div'>
             <p>Already have an account</p>
-            <h5 onClick={(()=>{navigate("/customer/account/login")})} >LOGIN</h5>
+            <h5 onClick={(()=>{navigate("/customer/account/login"); localStorage.removeItem('addr-details')})} >LOGIN</h5>
             </div>
           </div>
       </Header>

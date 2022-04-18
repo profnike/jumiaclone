@@ -46,6 +46,7 @@ export default function App() {
     callback: (response) => {
        console.log(response);
        localStorage.setItem('clientRes', JSON.stringify(response))
+       localStorage.removeItem('addr-details')
       // closePaymentModal() // this will close the modal programmatically
       clearallitem()
        navigate("/Paymentsuccess")

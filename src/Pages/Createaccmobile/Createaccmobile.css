@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.mobile-createacc-view{
+    display: none;
+}
+.web-createacc-view{
+    display:inline;
+}
+
+@media screen and (max-width:1000px) {
+    
+
+.mobile-createacc-view{
+    display: inline;
+}
+.web-createacc-view{
+    display: none;
+}
+.create-mobile-page{
+  
+    padding-top: 110px;
+   
+}
+.currpage-create{
+    color: orange;
+    padding: 15px;
+    padding-top: 0px;
+    border-bottom: 1px solid orange;
+    margin-bottom: 0;
+}
+.noncurrpage-mobilecreate{
+    color: black;
+    border: none;
+}
+.create-mobile-page .createaccount-container{
+  
+    margin: 0;
+    width: 100%;
+    padding: 0 10px;
+}
+.headings-create-smallerscreen{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start;
+    border-top:4px solid rgba(128,128,128,20%);
+    border-bottom:4px solid rgba(128,128,128,20%);
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+.headings-create-smallerscreen h5{
+    margin-right: 15px;
+}
+.headings-create-smallerscreen .noncurrpage-mobilecreate{
+    color: black;
+}
+.create-mobile-page .create-inner-input-container {
+    flex-direction: column;
+  
+}
+.create-mobile-page .create-inner-input-container .create-input-flex{
+    width: 100%;
+   
+}
+.create-mobile-page .prefix-input-create {
+    width: 100%;
+   
+    margin-top: 15px;
+}
+.create-mobile-page .checkbox-and-parag{
+    width: 90%;
+}
+.create-mobile-page .already-have-acct-div h5{
+    margin-top: 15px;
+    margin-bottom: 80px;
+}
+.create-mobile-page .login-password-input-div-create-account{
+    padding-bottom: 10px;
+    
+    /* border-bottom: 1px solid gray; */
+}
+}

@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header-addressmobile{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    padding: 15px;
+    padding-left: 10px;
+  
+}
+.header-addressmobile h5{
+    margin-bottom: 0;
+    font-size: 17px;
+    margin-left: 10px;
+}
+.addr-details-required{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 13px;
+}
+.addr-details-required h5{
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.body-addressmobile section{
+    background-color: white;
+    padding: 10px;
+}
+.body-addressmobile{
+    background-color:
+    rgba(40, 40, 40,10%);
+    padding-bottom: 40px;
+}

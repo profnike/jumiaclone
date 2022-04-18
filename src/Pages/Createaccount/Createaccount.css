@@ -18,10 +18,11 @@
     border: none;
     border-bottom: 1px solid grey;
     width: 100%;
-   
+    padding: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
 }
 .login-password-input-div-create-account:focus{
     border-bottom: 1px solid grey;
@@ -32,6 +33,8 @@
     border-bottom:none;
     min-width: 94%;
     margin-bottom: 0;
+   
+    height: 90%;
    
 }
 .login-password-input-div-create-account input:focus{

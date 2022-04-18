@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.largerscreen-shippingmethod{
+    display: inline;
+}
+.smallscreen-shippingmethod{
+    display: none;
+}
+
+@media screen and (max-width:1000px) {
+    .smallscreen-shippingmethod{
+        display:inline;
+        
+    }
+    .largerscreen-shippingmethod{
+        display: none;
+
+    }
+    .inner-small-shippingmethod{
+        background-color:
+rgba(40, 40, 40,10%);
+    }
+    .add-and-change-shippingmethod{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+        padding: 10px;
+        margin-bottom: 0px;
+        padding-bottom: 0;
+    }
+    .add-and-change-shippingmethod h4{
+        color: orange;
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+    .add-and-change-shippingmethod h5{
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+    .section-twos-shippingmethod{
+        text-align: left;
+        margin-top: 10px;
+        background-color: white;
+        padding: 10px;
+    }
+    .inner-small-shippingmethod h5{
+        font-size: 13px;
+
+    }
+    .delivrymethod-shippingmethod{
+        text-align: left;
+        background-color: white;
+        padding: 10px;
+    }
+    .lower-firstsection-shippingmethod{
+        background-color: white;
+        margin-top: 10px;
+       padding: 10px 0;
+    }
+    .lower-firstsection-shippingmethod button{
+        width: 95%;
+        height: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: white;
+        background-color: orange;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    .lower-firstsection-shippingmethod .total-and-full-amount{
+        border: none;
+        padding-right: 10px;
+        margin-bottom: 20px;
+    }
+    .lower-firstsection-shippingmethod .modify-cart-checkout{
+        border-top: none;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    .inner-checkout-right-lower-shippingmethod{
+        margin-top: 50px;
+    }
+    .inner-checkout-right-lower-shippingmethod h5{
+        color: orange;
+    }
+    .inner-checkout-right-lower-shippingmethod .subtotal-amt-checkout p{
+        margin-bottom: 30px;
+    }
+    
+    .local-fee-amount-shipping-method p{
+        margin-bottom: 10px;
+
+    }
+    .footer-shippingmethod{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(43, 41, 41);
+        padding: 20px;
+        color: gray;
+        margin-top: 50px;
+    }
+    .select-shippingmethod{
+        text-align: left;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+    .subheading-shippingmethod{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        padding: 10px;
+    }
+    .subheading-shippingmethod div{
+        width: 70px;
+        border-radius: 34px;
+        font-size: 10px;
+        color: gray;
+        height: 20px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .subheading-shippingmethod .deliv-excep-shippingmethod{
+        background-color: orange;
+        color: white;
+    }
+    .topheading-shippingmethod{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: rgb(43, 41, 41);
+        color: white;
+    }
+    .topheading-shippingmethod P{
+        font-size: 10px;
+
+    }
+    .topheading-shippingmethod h5{
+        font-size: 20px;
+
+    }
+}

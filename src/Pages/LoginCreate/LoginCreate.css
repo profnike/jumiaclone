@@ -142,5 +142,51 @@
     .smallscreen-logincreate{
         display: inline;
     }
+    .login-innerbody-smallscreen{
+        padding: 0px 10px;
+        padding-top: 110px;
+       
+    }
+    .headings-login-create-smallerscreen{
+        display: flex;
+        margin: 0 auto;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .headings-login-create-smallerscreen h5{
+        margin-right: 15px;
+        cursor: pointer;
+       
+    }
+    .login-logincreate{
+        width: 100%;
+        border: none;
+        margin-right: 0px;
+        padding-right: 0px;
+        margin: 0px auto;
+    }
+    .login-logincreate button{
+        width: 100%;
+        color: white;
+        background-color: orange;
+        border-radius: 3px;
+        border: none;
+        font-size: 14px;
+        font-weight: bold;
+        height: 40px;
+        margin-top: 15px;
+    }
+    .signup-logincreate{
+        width: 90%;
+        padding-left: 0px;
+        margin: 0px auto;
+        border: none;
+    }
+    .current-login-mobile{
+        color: orange;
+    padding: 15px;
+    padding-top: 0px;
+    border-bottom: 1px solid orange; 
+    }
     
 }
