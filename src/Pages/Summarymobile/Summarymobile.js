@@ -5,9 +5,10 @@ import cartContext from '../../Context/Cart/CartContext';
 // import Flutterwave from '../../Components/Flutterwave/Flutterwave'
 import Flutterwavelink from '../../Components/Flutterwave/Flutterwave'
 import { useNavigate } from 'react-router-dom';
-import '../Shippingmethod/Shippingmethod.css'
+import '../Summarymobile/Summarymobile.css'
 
-const Shippingmethod = () => {
+const Summarymobile  = () => {
+
     const{cartItems}=useContext(cartContext)
     const[address, setAddress]=useState(true)
     const[payment, setPayment]=useState(false)
@@ -30,13 +31,20 @@ const Shippingmethod = () => {
     const user=useRef()
     const addretrieve=useRef()
     const navigate=useNavigate()
+    const delivmob=useRef()
+    const localfeeretrieve=useRef()
+    const totalfeeretrieve=useRef()
+    const goodamtretrieve=useRef()
     // const[deliverybody,setDeliverybody]=useState({})
     // let user;
     // let addretrieve;
     useEffect(()=>{
-        
+        localfeeretrieve.current=JSON.parse(localStorage.getItem('localfee'));
+        totalfeeretrieve.current=JSON.parse(localStorage.getItem('totalfee'));
+        goodamtretrieve.current=JSON.parse(localStorage.getItem('goods-amt'));
         user.current = JSON.parse(localStorage.getItem('jumia-user'));
         addretrieve.current = JSON.parse(localStorage.getItem('addr-details'));
+        delivmob.current = JSON.parse(localStorage.getItem('deliverystyle'));
        console.log(addretrieve)
       
     if(user!==null){
@@ -102,12 +110,7 @@ const Shippingmethod = () => {
 
     }
 
-    function nextfunc(){
-        if((pick!==false)||(home!==false)){
-            navigate("/checkout/multistep/shipping/payment")
-        }
-        else{} 
-    }
+   
   return (
     <div>
         <div className='largerscreen-shippingmethod'>
@@ -447,15 +450,38 @@ const Shippingmethod = () => {
             </div>
 
         <div className='subheading-shippingmethod'>
-            <div className='deliv-excep-shippingmethod'>DELIVERY</div>
+            <div >DELIVERY</div>
             <div>PAYMENT</div>
-            <div>SUMMARY</div>
+            <div className='deliv-excep-shippingmethod'>SUMMARY</div>
         </div>
                             
         </div>
+       
+        <h5 className='summary-amt-mobile-header'>ORDER SUMMARY</h5>
+        <div className='subtotal-amt-checkout summary-amt-mobile'>
+                            <div>
+                            <p>Subtotal</p>
+                            <p>GHC {totals}</p>
+                            </div>
+                            <div className='local-fee-amount-shipping-method'>
+                                      <p>Local Delivery Fees</p>
+                                      <h5 className='fees-h5'>{localfeeretrieve.current}</h5>
+                                  </div>
+                            
+                                  <div className='total-and-full-amount'>
+                            <b><p>Total</p></b>
+                                      {/* <h5 className='fees-h5'>{totalfee}</h5> */}
+                                      <h5 className='fees-h5'> {totalfeeretrieve.current}</h5>
+                        </div>
+                           
+
+
+                        </div>
+                       
+     
         
         <div className='add-and-change-shippingmethod'>
-            <h5>YOUR ADDRESS</h5>
+            <h5>CUSTOMER ADDRESS</h5>
             <h4  onClick={(()=>{navigate("/checkout/multistep/shipping")})}>CHANGE ADDRESS</h4>
         </div>
         <section className='section-twos-shippingmethod'>
@@ -465,83 +491,54 @@ const Shippingmethod = () => {
                         <p>+233 {phone}</p>
                        
                         </section>
-                        <h5 className='select-shippingmethod'>SELECT A DELIVERY METHOD</h5>
-                        <div className='delivrymethod-shippingmethod'>
-                        <div className='input-div-delivery-method'>
-                        <input onClick={(()=>{
-                              localStorage.setItem("goods-amt", JSON.stringify(totals));
-                            setFeeval(true);setPick(true);setHome(false);setLocalfee("N.A."); settotalfee("N.A.");
-                            localStorage.setItem("localfee", JSON.stringify("N.A."));
-                            localStorage.setItem("totalfee", JSON.stringify("N.A."));
-                            localStorage.setItem("deliverystyle", JSON.stringify("Pickup"))
-                        })} name="delivery" type="radio" alt=""
-                            defaultChecked={true}/> 
-                           
-                           
-                        <div>
-                            <h5>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
+                        <div className='add-and-change-shippingmethod'>
+            <h5>DELIVERY METHOD</h5>
+            <h4  onClick={(()=>{navigate("/checkout/multistep/shipping/method")})}>CHANGE DELIVERY</h4>
+        </div>
+
+
+        <div>
+        <section  className='section-two deliv-detail-summarymobile'>
+                            {
+                                delivmob.current==="Pickup" ?(
+                                    <div className='input-div-delivery-methods'>
+                                        <h5 className='excep-header'>Collect at any of our Pickup Stations(Cheaper Fees)</h5>
                             <p>Ready for pickup between <span>Thursday 21 Apr</span> and  
                             <span> Wednesday 27 Apr</span> with cheaper shopping fees</p> 
-                            <h4 className='pick-up-checkout'>SELECT PICKUP STATION</h4>
-                            </div>
-                            </div>
-                            <div className='input-div-delivery-method-next'>
-                        <input onClick={(()=>{
-                              localStorage.setItem("goods-amt", JSON.stringify(feetotals));
-                              localStorage.setItem("localfee", JSON.stringify("GHC 34.22"));
-                            
-                            setFeeval(true);setPick(false);setHome(true);setLocalfee("GHC 34.22"); settotalfee(`GHC  ${feetotals}`);
-                            localStorage.setItem("totalfee", JSON.stringify(`GHC  ${feetotals}`));
-                            localStorage.setItem("deliverystyle", JSON.stringify("Home"))
-                            })} name="delivery" type="radio" alt="" />
-                        <div>
-                            <h5>Home & Office Delivery</h5>
+
+                                    </div>
+                                ):(
+                                    <div className='input-div-delivery-method-nexts' >
+                                        
+                                        <h5 className='excep-header'>Home & Office Delivery</h5>
+                                       
                             <p> Normally delivered between <span className='span'>Thursday 21 Apr</span> and 
                             <span className='span'> Wednesday 27 Apr</span>. Please check exact dates at the Checkout page for 
                             <span id='amount-for-in-checkout'> GHC 34.22 </span></p>
-                            <div className='note-in-checkout'> 
-                            *Living in Greater Accra <span>JUMIA PRIME </span> Members enjoy Free Delivery on all Jumia Local Items 
-                            (excluding bulky items) and Jumia Food Orders
+                                    </div>
+                                )
+                            }
 
-
-                        <p className='note-and-column'>Note:</p>
-                       <p> *Items may be shipped and attempted SEPARATELY for deliveries as they become 
-                        available.
-                        </p>
-
-                        <p>
-                        *Please make sure you entered your home address with the full necessary 
-                        details so that you may stay safe and expect delivery at your doorstep.
-                        </p>
-
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-                        <div className='lower-firstsection-shippingmethod'>
-                        <div className='subtotal-amt-checkout'>
-                            <div>
-                            <p>Subtotal</p>
-                            <p>GHC {totals}</p>
-                            </div>
+                        </section>
+        </div>
+        <div className='add-and-change-shippingmethod'>
+            <h5>PAYMENT METHOD</h5>
+            <h4  onClick={(()=>{navigate("/checkout/multistep/shipping/payment")})}>CHANGE PAYMENT</h4>
+        </div>
+        <div className='input-text-payment-option payment-style-summarymobile'>
                             
-                                {
-                                  feeval ? (<div className='local-fee-amount-shipping-method'>
-                                      <p>Local Delivery Fees</p>
-                                      <h5 className='fees-h5'>{localfee}</h5>
-                                  </div>): ""  
-                                }
-                           
-
-
+                            <div className='image-payment-option'>
+                            <p>Pay Now 10% off up to 20 GHS Instant Discount. Pay safe Pay Easy.</p>
+                            </div>
                         </div>
-                        {feeval ? (<div className='total-and-full-amount'>
-                            <b><p>Total</p></b>
-                                      {/* <h5 className='fees-h5'>{totalfee}</h5> */}
-                                      <h5 className='fees-h5'> {totalfee}</h5>
-                        </div>):""}
-                        <p className='voucher-checkout'> You will be able to add a voucher in the next step</p>
-                        <button onClick={nextfunc}>NEXT</button>
+                        
+                        <h5 className='voucher-paymentstyle'>YOU HAVE A VOUCHER?</h5>
+                                <div className='voucher-and-botton-payment'>
+                                    <input placeholder='Enter voucher code here'/><button>USE</button>
+                                </div>
+                        <div className='lower-firstsection-shippingmethod lower-section-summarymobile'>
+                        
+                        <div className='flutter-button'><Flutterwavelink  /></div>
                         <h5 className='modify-cart-checkout'>MODIFY CART</h5>
                         </div>
                    
@@ -563,4 +560,4 @@ const Shippingmethod = () => {
   )
 }
 
-export default Shippingmethod
+export default Summarymobile

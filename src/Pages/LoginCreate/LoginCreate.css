@@ -140,7 +140,10 @@
         display: none;
     }
     .smallscreen-logincreate{
-        display: inline;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
     }
     .login-innerbody-smallscreen{
         padding: 0px 10px;

@@ -17,17 +17,16 @@ const LoginCreate = () => {
     const[revconc,setRevconc]=useState("password")
     const[passimage,setPassimage]=useState({display:"none"})
     const[textimage,setTextimage]=useState({display:"flex"})
-    const[loginpage,setLoginpage]=useState({color:"orange",borderBottom:"1px solid orange",padding:"15px",paddingTop:"0px"})
-    const[createaccpage,setCreateaccpage]=useState({color:"black"})
-    const[loginshow,setLoginshow]=useState({display:"inline"})
-    const[signupshow,setSignupshow]=useState({display:"none"})
+    // const[loginpage,setLoginpage]=useState({color:"orange",borderBottom:"1px solid orange",padding:"15px",paddingTop:"0px"})
+    // const[createaccpage,setCreateaccpage]=useState({color:"black"})
+    // const[loginshow,setLoginshow]=useState({display:"inline"})
+    // const[signupshow,setSignupshow]=useState({display:"none"})
     function create(){
-        let users=JSON.parse(localStorage.getItem('jumia-user'));
-        if(users!==null){
-            navigate("/onepage/checkout/address") 
-        }
-        else{navigate("/Createaccount")}
+        
+            navigate("/Createaccount") 
+        
     }
+   
     function loginfunc(){
         let logincheck=JSON.parse(localStorage.getItem('jumia-user'));
         if(logincheck!==null){
@@ -97,10 +96,10 @@ const LoginCreate = () => {
             <Headersmall/>
             <div className='login-innerbody-smallscreen'>
                <div className='headings-login-create-smallerscreen'>
-                   <h5 className='current-login-mobile' onClick={(()=>{})} style={loginpage}>LOGIN</h5>
-                   <h5 onClick={(()=>{navigate("/customer/account/create")})} style={createaccpage}>CREATE AN ACCOUNT</h5>
+                   <h5 className='current-login-mobile' onClick={(()=>{})} >LOGIN</h5>
+                   <h5 onClick={(()=>{navigate("/customer/account/create")})} >CREATE AN ACCOUNT</h5>
                </div>
-               <div style={loginshow} className='login-logincreate'>
+               <div  className='login-logincreate'>
                 {/* <h3>Login</h3> */}
                 <div className='input-container'>
                     <div className='input-and-diplay-caution'>

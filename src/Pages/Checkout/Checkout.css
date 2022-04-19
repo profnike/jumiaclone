@@ -435,3 +435,18 @@
     color: black;
    
 }
+.mobile-view-checkout{
+    display: none;
+}
+.web-view-checkout{
+    display: inline;
+}
+@media screen and (max-width:1000px) {
+    .web-view-checkout{
+        display: none;
+    }
+    .mobile-view-checkout{
+        display: inline;
+    }
+    
+}

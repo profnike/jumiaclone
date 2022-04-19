@@ -28,7 +28,7 @@ const Headersmall = () => {
         <div className='upper-header'>
         <div className='header-corners'>
             <div className='hamb-icon-small-header icon-smallheader'><GiHamburgerMenu/></div>
-            <p>JUMIA</p>
+            <p onClick={(()=>{navigate("/")})}>JUMIA</p>
         </div>
 
         <div  className='header-corners'>

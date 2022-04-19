@@ -68,7 +68,7 @@ function About(){
                     {id:"000015",image:flashallfifteen, name:"Lindy Portable Fabric Wardrobe",
                         amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
                         {id:"000016",image:flashallsixteen, name:"Adonko Adonko 123 Bitters",
-                            amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                            amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
 
     ]
    

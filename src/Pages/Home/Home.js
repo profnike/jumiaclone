@@ -39,7 +39,7 @@ import flashallfive from '../../Asset/flash-all-five.jpg'
 import flashallsix from '../../Asset/flash-all-six.jpg'
 import Headersmall from '../../Components/Headersmall/Headersmall'
 import { useRef } from 'react'
-
+import enjoy from '../../Asset/enjoy-jumia.jpg'
 import {HiChevronRight } from "react-icons/hi";
 import "../Home/Home.css"
 import { useNavigate } from 'react-router-dom'
@@ -149,9 +149,9 @@ function Home(){
                           </div>
                           <div className='major-blocks-right-top home-top-right-area-second'>
                               
+                         <img className='enjoy-img-home' src={enjoy} alt=""/>
                          
-                         
-                          <h3 className='top-right-anim'>
+                          {/* <h3 className='top-right-anim'>
                           EVERYTHING MUST GO!
                          
                                   </h3>
@@ -161,7 +161,7 @@ function Home(){
                               <h3>Upto 80% off</h3>
                                 <h4>1st to 3rd April</h4>
                             
-                                  </div>
+                                  </div> */}
                              
                              
                            
@@ -224,6 +224,7 @@ function Home(){
                         
                         <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
                             <li><img src={val.image} alt=""/></li>
+                            <li className="name-home-webview">{val.name}</li>
                             <li>GHC {val.amount}</li>
                             <li className='previous-cancel-home'>{val.previous}</li>
                             <li>{val.amtleft}</li>
@@ -526,7 +527,7 @@ function Home(){
                          return(
                              
                             //  <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
-                            <ul  ref={myRef} className='list-container'  key={ind}>
+                            <ul onClick={(()=>{navigate(`about/${val.id}`)})}  ref={myRef} className='list-container'  key={ind}>
                                
                                  <li><img src={val.image} alt=""/></li>
                                  <li className='name-homelist-smallscreen'>{val.name}</li>
@@ -605,7 +606,7 @@ function Home(){
                          return(
                              
                             //  <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
-                            <ul  ref={myRef} className='list-container'  key={ind}>
+                            <ul onClick={(()=>{navigate(`about/${val.id}`)})}  ref={myRef} className='list-container'  key={ind}>
                                  <li><img src={val.image} alt=""/></li>
                                  <li className='name-homelist-smallscreen'>{val.name}</li>
                                  <li className='clearance-amt-smallscreen-center'>GHC {val.amount}</li>
@@ -699,7 +700,7 @@ function Home(){
                          return(
                              
                             //  <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
-                            <ul  ref={myRef} className='list-container'  key={ind}>
+                            <ul onClick={(()=>{navigate(`about/${val.id}`)})} ref={myRef} className='list-container'  key={ind}>
                                  <li><img src={val.image} alt=""/></li>
                                  <li>GHC {val.amount}</li>
                                  <li className='previous-cancel-home'>{val.previous}</li>

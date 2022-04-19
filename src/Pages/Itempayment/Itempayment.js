@@ -108,10 +108,10 @@ const Itempayment = () => {
     }
 
     function nextfunc(){
-        if((pick!==false)||(home!==false)){
-            navigate("/checkout/multistep/shipping/payment")
-        }
-        else{} 
+        // if((pick!==false)||(home!==false)){
+            navigate("/checkout/multistep/shipping/summary")
+        // }
+        // else{} 
     }
   return (
     <div>
@@ -462,10 +462,10 @@ const Itempayment = () => {
         <div className='add-and-change-shippingmethod'>
             <h5>SELECT A PAYMENT METHOD</h5>
         </div>
-        <div className='input-text-payment-option'>
-                            <input name="payment" type="radio" alt=""/>
+        <div className='input-text-payment-option payment-option-itempayment'>
+                            <input name="payment" type="radio" alt="" defaultChecked={true}/>
                             <div className='image-payment-option'>
-                            <p>Jumia Sales Agent.</p>
+                            <p>Pay Now 10% off up to 20 GHS Instant Discount. Pay safe Pay Easy.</p>
                             </div>
                         </div>
                         <div className='input-text-payment-option'>

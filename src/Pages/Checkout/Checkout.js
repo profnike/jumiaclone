@@ -2,7 +2,8 @@ import React, {useContext, useEffect,useRef} from 'react'
 import Header from '../../Components/Header/Header'
 import { useState } from 'react'
 import cartContext from '../../Context/Cart/CartContext';
-// import Flutterwave from '../../Components/Flutterwave/Flutterwave'
+import {BsXLg } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 import Flutterwavelink from '../../Components/Flutterwave/Flutterwave'
 import '../Checkout/Checkout.css'
 
@@ -28,9 +29,8 @@ const Checkout = () => {
     const[users,setUsers]=useState(false)
     const user=useRef()
     const addretrieve=useRef()
-    // const[deliverybody,setDeliverybody]=useState({})
-    // let user;
-    // let addretrieve;
+    const navigate=useNavigate()
+   
     useEffect(()=>{
         
         user.current = JSON.parse(localStorage.getItem('jumia-user'));
@@ -87,6 +87,20 @@ const Checkout = () => {
         else{}
        
     }
+    function addmobfunc(){
+        if((first!=="")&&(last!=="")&&(add!=="")&&(state!=="")&&(city!=="")&&(phone!=="")){
+          
+            let addr={first,last,add,state,city,phone}
+            localStorage.setItem("addr-details", JSON.stringify(addr))
+            navigate("/checkout/multistep/shipping/method")
+          
+            //   setAddress(false);
+            //   setaddcolor({backgroundColor:"green"})
+            //   setDelivery(true)
+            //   setUsers(true)
+        }
+        else{}
+    }
 
     function delivfunc(){
         if((pick!==false)||(home!==false)){
@@ -101,6 +115,8 @@ const Checkout = () => {
     }
     
   return (
+      <div>
+          <div className='web-view-checkout'>
     <div>
         <Header>
         <div className='checkout-inner-container'>
@@ -428,6 +444,62 @@ const Checkout = () => {
             </div>
         </div>
       </Header>
+    </div>
+    </div>
+                            
+    <div className='mobile-view-checkout'>
+         <div>
+        <div className='header-addressmobile'>
+            <div onClick={(()=>{navigate("/Cart")})}><BsXLg/></div>
+            <h5>Address Book</h5>
+            </div>
+            <div className='body-addressmobile'>
+                <div className='addr-details-required'>
+                    <h5>ADDRESS DETAILS</h5>
+                    <p>*Required fields</p>
+                    </div>
+                    <section className='section-two'>
+                        <div className='checkout-sectwo-input'>
+                            <div className='checkout-sectwo-input-div checkout-sectwo-input-div-left'>
+                                <p>First Name*</p>
+                            <input value={first} onChange={(e)=>{setFirst(e.target.value)}} />
+                            </div>
+                            
+                            <div className='checkout-sectwo-input-div'>
+                                <p>Last Name*</p>
+                            <input value={last} onChange={(e)=>{setLast(e.target.value)}}/>
+                            </div>
+                        </div>
+                        <div >
+                            <p>Mobile phone number*</p>
+                            <div className='code-and-phone-checkout'>
+                                <div className='mobile-code-checkout'>
+                                    +233
+                                </div>
+                            <input onChange={(e)=>{setPhone(e.target.value)}} placeholder='Enter number in format 888888888'/>
+                            </div>
+                        </div>
+                        <div className='parag-textarea'>
+                            <p>Address*</p>
+                            <textarea onChange={(e)=>{setAdd(e.target.value)}} placeholder='Street Name/Building/ Apartment No/ Floor'/>
+                        </div>
+                        <div className='parag-textarea-state'>
+                            <p>State/Region*</p>
+                            <input onChange={(e)=>{setState(e.target.value)}}/>
+                        </div>
+                        <div className='parag-textarea-city'>
+                            <p>City*</p>
+                            <input onChange={(e)=>{setCity(e.target.value)}} />
+                        </div>
+                       
+                        <button onClick={ addmobfunc }>SAVE AND CONTINUE</button>
+                    </section>
+               
+            </div>
+       
+      
+    </div>
+    </div>
     </div>
   )
 }

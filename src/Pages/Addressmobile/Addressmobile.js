@@ -37,11 +37,14 @@ setLast(user.current.last)
 }
 else{}
 },[])
-function addfunc(){
+
+function addmobfunc(){
     if((first!=="")&&(last!=="")&&(add!=="")&&(state!=="")&&(city!=="")&&(phone!=="")){
+      
         let addr={first,last,add,state,city,phone}
         localStorage.setItem("addr-details", JSON.stringify(addr))
         navigate("/checkout/multistep/shipping/method")
+     
         //   setAddress(false);
         //   setaddcolor({backgroundColor:"green"})
         //   setDelivery(true)
@@ -94,7 +97,7 @@ function addfunc(){
                             <input onChange={(e)=>{setCity(e.target.value)}} />
                         </div>
                        
-                        <button onClick={ addfunc }>SAVE AND CONTINUE</button>
+                        <button onClick={ addmobfunc }>SAVE AND CONTINUE</button>
                     </section>
                
             </div>

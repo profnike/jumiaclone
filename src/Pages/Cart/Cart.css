@@ -119,6 +119,7 @@
 @media screen and (max-width:1000px) {
     .small-screen-cart{
         display: inline;
+
         /* text-align: left; */
     }
     .large-screen-cart{
@@ -126,6 +127,10 @@
     }
     .cart-inner-smallscreen{
         padding-top: 110px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .cart-summary-head-smallerscreen{
         text-align: left;

@@ -40,7 +40,7 @@ const CartItem = ({item}) => {
                 </div>
             </div>
             <div className='hidden-smallscreen-cartitem'>
-                <div>{item.amount}</div>
+                <div>GHC {item.amount}</div>
                 <div className='previous-amt-cart'>{item.previous}</div>
             </div>
             </div>

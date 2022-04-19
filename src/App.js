@@ -13,6 +13,7 @@ import Paymentsuccess from './Pages/Paymentsuccess/Paymentsuccess';
 import Createaccmobile from './Pages/Createaccmobile/Createaccmobile';
 import Shippingmethod from './Pages/Shippingmethod/Shippingmethod';
 import Itempayment from './Pages/Itempayment/Itempayment';
+import Summarymobile from './Pages/Summarymobile/Summarymobile';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route exact path="/checkout/multistep/shipping" element={<Addressmobile/>}/>
       <Route exact path="/checkout/multistep/shipping/method" element={<Shippingmethod/>}/>
       <Route exact path="/checkout/multistep/shipping/payment" element={<Itempayment/>}/>
+      <Route exact path="/checkout/multistep/shipping/summary" element={<Summarymobile/>}/>
       </Routes>
       {/* const params=useParams()
     let current=params.id

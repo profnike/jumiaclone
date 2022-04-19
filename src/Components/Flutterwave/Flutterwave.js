@@ -14,7 +14,7 @@ export default function App() {
   let amt = JSON.parse(localStorage.getItem('goods-amt'));
   
   let email=customerInfo.email
-  let phone=customerDetail.phone
+  let phone=""
   let first=customerDetail.first
   let last=customerDetail.last
   let customerName=first +" "+ last
@@ -46,10 +46,15 @@ export default function App() {
     callback: (response) => {
        console.log(response);
        localStorage.setItem('clientRes', JSON.stringify(response))
-       localStorage.removeItem('addr-details')
-      // closePaymentModal() // this will close the modal programmatically
-      clearallitem()
-       navigate("/Paymentsuccess")
+        //localStorage.removeItem('addr-details')
+      //  localStorage.removeItem('deliverystyle')
+      //  localStorage.removeItem('localfee')
+      //  localStorage.removeItem('totalfee')
+      //  localStorage.removeItem('goods-amt')
+        localStorage.removeItem('cart')
+       //closePaymentModal() // this will close the modal programmatically
+       clearallitem()
+      //   navigate("/")
     },
     onClose: () => {
         navigate("/")

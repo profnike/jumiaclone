@@ -34,6 +34,8 @@ import Footer from '../../Components/Footer/Footer'
 import Itembutton from "../../Components/Itembutton/Itembutton";
 import cartContext from "../../Context/Cart/CartContext";
 import '../All/All.css'
+import Headersmall from "../../Components/Headersmall/Headersmall";
+import Footersmall from "../../Components/Footersmall/Footersmall";
 
 function All(){
     const{addToCart}=useContext(cartContext)
@@ -89,13 +91,15 @@ function All(){
                         {id:"000015",image:flashallfifteen, name:"Lindy Portable Fabric Wardrobe",
                             amount:" 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
                             {id:"000016",image:flashallsixteen, name:"Adonko Adonko 123 Bitters",
-                                amount:"GHC 35.49",previous:"GHC 129.00",amtleft:"20 items left"},
+                                amount:"35.49",previous:"GHC 129.00",amtleft:"20 items left"},
             
             
 
     ]
    
     return(
+        <div>
+    <div className="flash-web-view">
         <div className="flash-container">
            <Header>
                <div id="flashbody">
@@ -118,7 +122,7 @@ function All(){
                         <ul    key={ind}>
                             
                             <li className="image-container-all"><img src={val.image} alt=""/></li>
-                            <li className="flash-item-name">{val.amount}</li>
+                            <li className="flash-item-name"> {val.amount}</li>
                             
                         </ul>
                         
@@ -300,7 +304,7 @@ function All(){
                            
                            <li className="flash-list-items-all-img"><img src={val.image} alt=""/></li>
                            <li>{val.name}</li>
-                            <li>{val.amount}</li>
+                            <li>GHC {val.amount}</li>
                             <li className='previous-cancel-home'>{val.previous}</li>
                             <li>{val.amtleft}</li>
                             <p>
@@ -360,6 +364,99 @@ function All(){
 
            </Header>
 
+        </div>
+        </div>
+        <div className="flash-mobile-view">
+            <div className="flash-inner-mobileview">
+            <Headersmall/>
+           
+            <div className="flash-body-mobile">
+       
+               <div className="banner-mobile-view">
+               <img src={banner} alt=""/>
+
+               </div>
+               <div className="flash-sections flash-mobileview-sections">
+               {   items.filter((val,indx)=>{
+                return(indx<6)
+            })
+                .map((val,ind)=>{
+                    // ind<2
+                    return(
+                        
+                        <ul    key={ind}>
+                            
+                            <li className="image-container-all"><img src={val.image} alt=""/></li>
+                            <li className="flash-item-name"> {val.amount}</li>
+                            
+                        </ul>
+                        
+                    )
+
+
+                })
+            }
+
+               </div>
+               <div className="sub-header-all-page-mobile">
+               <p>Time left: 14h :42m :55s</p>
+               </div>
+               <h5 className="shop-all-mobileview">SHOP ALL PRODUCTS</h5>
+               <div className="items-in-flash-catg items-in-flash-mobileview">
+                      
+                      {   itemstwo.map((val,ind)=>{
+                   // ind<2
+                   return(
+                       
+                       <ul    key={ind}>
+                           <div onClick={(()=>{navigate(`/about/${val.id}`)})}>
+                          
+                          <li className="flash-list-items-all-img"><img src={val.image} alt=""/></li>
+                          <li>{val.name}</li>
+                           <li>GHC {val.amount}</li>
+                           <li className='previous-cancel-home'>{val.previous}</li>
+                           <li>{val.amtleft}</li>
+                           <p>
+                               Eligible for the free net day delivery for orders above GHS 80 in Accra and Kumasi 
+                               (Excluding large items)
+                           </p>
+                           </div>
+                          
+                           {cartItems.some((p,ind)=>p.id===val.id )?(
+                              
+                                num = cartItems.find((valu)=>{
+                                
+                               return(
+                               valu.id===val.id
+                               )
+                              
+                           }),
+                           <div className="quantity-all-items-div">
+                              <Itembutton val={num}/>
+                              </div>
+                              
+                              )
+                               
+                           :(  <button onClick={(()=>{
+                               addToCart(val);
+                               // localStorage.setItem("cart", JSON.stringify(cartItems));
+                               // console.log(cartItems)
+
+                           })}>Add To Cart</button>)}
+                         
+                           
+                       </ul>
+                       
+                   )
+
+
+               })
+           }
+           </div>
+               </div>
+            <Footersmall/>
+            </div>
+        </div>
         </div>
     )
 }

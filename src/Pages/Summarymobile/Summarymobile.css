@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.summary-amt-mobile{
+    background-color: white;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+}
+.summary-amt-mobile-header{
+    margin-bottom: 0;
+    padding: 10px;
+    text-align: left;
+}
+.summary-amt-mobile .total-and-full-amount{
+    padding:0 ;
+
+}
+.deliv-detail-summarymobile{
+    text-align: left;
+    border: none;
+    background-color: white;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.payment-style-summarymobile{
+    text-align: left;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+.lower-section-summarymobile{
+    padding-top: 0;
+}
