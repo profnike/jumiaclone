@@ -108,14 +108,15 @@ function Createaccmobile  () {
               <input placeholder='First Name'type="name" onChange={(e)=>{setFirst(e.target.value)}} required/>
             </div>
             <div>
+            <input placeholder='Last Name' type="name" onChange={(e)=>{setLast(e.target.value)}} required/>
+            </div>
+            <div>
             <input placeholder='Email' type="email" onChange={(e)=>{setEmail(e.target.value)}} required/>
              
             </div>
             </div>
             <div className='create-input-flex inner-input-right'>
-            <div>
-            <input placeholder='Last Name' type="name" onChange={(e)=>{setLast(e.target.value)}} required/>
-            </div>
+          
             <div className='login-password-input-div-create-account'>
             <input placeholder='Password' type={revconc} onChange={(e)=>{setPassword(e.target.value)}} required/>
             <div className='eye-div' style={textimage} onClick={(()=>{setRevconc("text");setPassimage({display:"flex"});setTextimage({display:"none"})})}>

@@ -151,6 +151,7 @@ rgba(40, 40, 40,10%);
 }
 .share-product-icons{
     margin-top: 10px;
+    display: flex;
 }
 .share-product-icons span:hover{
     color: orange;
@@ -164,6 +165,9 @@ rgba(40, 40, 40,10%);
     cursor: pointer;
     border: 1px solid black;
     border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .about-smaller-screen{
     display: none;
@@ -204,8 +208,12 @@ rgba(40, 40, 40,10%);
        text-align: left;
        
     }
-    .promotion-smallscreen p{
+    .promotions-about h5{
         font-size: 1rem;
+        margin-left: 10px;
+    }
+    .promotion-smallscreen p{
+        font-size: 0.8rem;
     }
     .report-smallscreen{
         background-color: white;

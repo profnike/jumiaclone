@@ -10,9 +10,9 @@ const Footersmall = () => {
 }
   return (
     <div className='footsmall-container'>
-      <div className='back-to-tp-small'>
+      <div onClick={Goup} className='back-to-tp-small'>
         <MdOutlineKeyboardArrowUp/>
-          <h6 onClick={Goup}>BACK TO TOP</h6>
+          <h6 >BACK TO TOP</h6>
       </div>
       <div className='mid-foooter-small'>
           <h6>HELP CENTER</h6>
